@@ -1,12 +1,17 @@
-import {Header, Main, Footer} from './components'
+import { Header, Nav, Main, Footer } from './components';
 import './App.css';
 
 function App() {
   return (
     <>
-      <Header/>
-      <Main/>
-      <Footer/>
+      <div className="page-wrapper grid">
+        <div className="top-wrapper grid max-width">
+          <Header />
+          <Nav />
+        </div>
+        <Main />
+        <Footer />
+      </div>
     </>
   );
 }

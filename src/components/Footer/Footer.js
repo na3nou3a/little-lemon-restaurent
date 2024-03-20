@@ -1,13 +1,14 @@
 import React from 'react';
 import logo from '../../images/smallLogo.png';
+import './styles.css';
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-content">
+      <div className="footer-content max-width grid">
         <div className="logo-container">
-          <img src={logo} className="logo" alt="site logo" />
+          <img src={logo} alt="site logo" />
         </div>
-        <nav className="nav site-map">
+        <nav className="site-map">
           <h4>doormat navigation</h4>
           <ul>
             <li>
@@ -38,7 +39,7 @@ function Footer() {
             <li>little.lemon@lemon.com</li>
           </ul>
         </div>
-        <nav className="nav social-media">
+        <nav className="social-media">
           <h4>social media links</h4>
           <ul>
             <li>

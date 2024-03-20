@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import menuIcon from '../../images/menu.svg';
+import './styles.css';
 
 function Nav() {
+  const [opened, setOpened] = useState(false);
+  const openMenu = () => {
+    if (!opened) {
+      setOpened(true);
+    } else {
+      setOpened(false);
+    }
+  };
   return (
-    <nav>
-      <ul>
+    <nav className="main-nav">
+      <button className="toggle-menu-btn" onClick={openMenu}>
+        <img src={menuIcon} className="icon" alt="toggle menu icon" />
+      </button>
+      <ul className={opened ? 'open' : ''}>
         <li>
           <a href="/">home</a>
         </li>

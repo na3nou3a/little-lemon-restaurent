@@ -1,12 +1,13 @@
 import React from 'react';
-import Nav from '../Nav';
-import logo from '../../images/littleLemonLogo.png'
+import logo from '../../images/littleLemonLogo.png';
+import './styles.css';
 
 function Header() {
-  return <header>
-    <img src={logo} alt='website logo'/>
-    <Nav/>
-  </header>;
+  return (
+    <header className="header">
+      <img className="logo" src={logo} alt="website logo" />
+    </header>
+  );
 }
 
 export default Header;
