@@ -1,0 +1,138 @@
+.highlights-section {
+  background-color: #fff;
+}
+
+.highlights-section .content {
+  padding: 4rem 0 2rem;
+}
+
+.highlights-section .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+  gap: 2rem;
+}
+
+.highlights-section .title {
+  font-size: 40px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.highlights-section .link-btn:link,
+.highlights-section .link-btn:visited {
+  color: #fff;
+  background-color: #495e57;
+  border: 2px solid #495e57;
+}
+
+.highlights-section .link-btn:hover,
+.highlights-section .link-btn:focus {
+  color: #495e57;
+  background-color: #fff;
+}
+
+.highlights-section .body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 1rem 2rem;
+}
+
+.highlights-section .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  background-color: #edefee;
+  max-width: 400px;
+  height: 100%;
+  padding: 4px;
+  margin: auto;
+  box-shadow: 2px 2px 15px #495e57;
+}
+
+.highlights-section .card-img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.highlights-section .card-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-family: 'Karla', sans-serif;
+  font-weight: 600;
+  padding: 8px 4px;
+  margin-bottom: 0.8rem;
+  text-transform: capitalize;
+}
+
+.highlights-section .card-price {
+  color: #ee9972;
+}
+
+.highlights-section .card-description {
+  font-size: 1.1rem;
+  color: #222;
+  padding: 8px 4px;
+  margin-bottom: 1.5rem;
+}
+
+.highlights-section .card-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+  padding: 4px 8px;
+  margin-left: 4px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  color: #495e57;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: 'Karla', sans-serif;
+  text-transform: capitalize;
+  background-color: #fff;
+  transition: all 0.3s linear;
+}
+
+.highlights-section .card-btn:hover,
+.highlights-section .card-btn:focus {
+  border-color: #495e57;
+}
+
+.highlights-section .icon {
+  margin-left: 0.5rem;
+  color: inherit;
+}
+
+.highlights-section .icon:hover {
+  color: #fff;
+}
+
+/* RESPONSIVNESS */
+
+@media (min-width: 500px) {
+  .highlights-section .header {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 576px) {
+  .highlights-section .title {
+    font-size: 48px;
+  }
+}
+
+@media (min-width: 768px) {
+  .highlights-section .body {
+    padding: 1rem 1rem;
+  }
+  .highlights-section .title {
+    font-size: 58px;
+  }
+}
