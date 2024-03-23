@@ -5,5 +5,6 @@ import Footer from './Footer';
 import HeroSection from './HeroSection';
 import Highlights from './Highlights';
 import CustomersSay from './CustomersSay';
+import About from './About';
 
-export { Header, Nav, Main, Footer, HeroSection, Highlights, CustomersSay };
+export { Header, Nav, Main, Footer, HeroSection, Highlights, CustomersSay, About };

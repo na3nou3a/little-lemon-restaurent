@@ -1,4 +1,13 @@
-import { Header, Nav, Main, Footer, HeroSection, Highlights, CustomersSay } from './components';
+import {
+  Header,
+  Nav,
+  Main,
+  Footer,
+  HeroSection,
+  Highlights,
+  CustomersSay,
+  About,
+} from './components';
 import './App.css';
 
 function App() {
@@ -13,6 +22,7 @@ function App() {
           <HeroSection />
           <Highlights />
           <CustomersSay />
+          <About />
         </Main>
         <Footer />
       </div>

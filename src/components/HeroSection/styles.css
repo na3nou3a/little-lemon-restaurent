@@ -34,11 +34,6 @@
   margin-bottom: 1rem;
 }
 
-.hero-section title,
-.hero-section .sub-title {
-  text-transform: capitalize;
-}
-
 .hero-section .text {
   color: #fff;
   font-size: 18px;
