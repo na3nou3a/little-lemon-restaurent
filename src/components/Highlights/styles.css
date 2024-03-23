@@ -10,15 +10,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   padding: 2rem 1rem;
   gap: 2rem;
 }
 
 .highlights-section .title {
+  width: unset;
   font-size: 40px;
-  font-weight: 500;
-  text-transform: capitalize;
 }
 
 .highlights-section .link-btn:link,
@@ -34,11 +32,12 @@
   background-color: #fff;
 }
 
-.highlights-section .body {
+.highlights-section .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  padding: 1rem 2rem;
+  column-gap: 15px;
+  row-gap: 20px;
+  padding: 1rem;
 }
 
 .highlights-section .card {
@@ -47,9 +46,9 @@
   justify-content: space-between;
   border-radius: 8px;
   background-color: #edefee;
-  max-width: 400px;
+  max-width: 340px;
   height: 100%;
-  padding: 4px;
+  padding: 1px;
   margin: auto;
   box-shadow: 2px 2px 15px #495e57;
 }
@@ -59,13 +58,22 @@
   border-radius: 8px;
 }
 
+.card-body {
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: auto;
+}
+
 .highlights-section .card-title {
   display: flex;
   justify-content: space-between;
   font-size: 1.2rem;
   font-family: 'Karla', sans-serif;
   font-weight: 600;
-  padding: 8px 4px;
+  padding: 8px 0;
   margin-bottom: 0.8rem;
   text-transform: capitalize;
 }
@@ -77,7 +85,7 @@
 .highlights-section .card-description {
   font-size: 1.1rem;
   color: #222;
-  padding: 8px 4px;
+  padding: 8px 0;
   margin-bottom: 1.5rem;
 }
 
@@ -87,7 +95,6 @@
   align-items: center;
   width: fit-content;
   padding: 4px 8px;
-  margin-left: 4px;
   cursor: pointer;
   border: 2px solid transparent;
   border-radius: 16px;
@@ -98,6 +105,7 @@
   text-transform: capitalize;
   background-color: #fff;
   transition: all 0.3s linear;
+  margin-top: auto;
 }
 
 .highlights-section .card-btn:hover,
@@ -116,21 +124,19 @@
 
 /* RESPONSIVNESS */
 
-@media (min-width: 500px) {
+@media (min-width: 576px) {
   .highlights-section .header {
     flex-direction: row;
+    align-items: center;
   }
-}
-
-@media (min-width: 576px) {
   .highlights-section .title {
     font-size: 48px;
   }
 }
 
 @media (min-width: 768px) {
-  .highlights-section .body {
-    padding: 1rem 1rem;
+  .highlights-section .cards {
+    column-gap: 20px;
   }
   .highlights-section .title {
     font-size: 58px;

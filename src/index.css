@@ -161,6 +161,7 @@ a {
   text-decoration: none;
   color: inherit;
   transition: all 0.2s linear;
+  text-transform: capitalize;
 }
 
 ul {
@@ -173,7 +174,9 @@ h3,
 h4 {
   line-height: 1;
   font-family: 'Markazi Text';
-  font-weight: normal;
+  font-weight: 500;
+  text-transform: capitalize;
+  width: 100%;
 }
 
 h1 {
