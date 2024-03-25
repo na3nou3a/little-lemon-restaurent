@@ -3,7 +3,6 @@ import { FaStar } from 'react-icons/fa';
 
 function Card({ client }) {
   const { name, rating, review, img } = client;
-  console.log(name);
   return (
     <article className="card">
       <h3 className="star-rating">

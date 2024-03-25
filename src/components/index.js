@@ -2,9 +2,26 @@ import Header from './Header';
 import Nav from './Nav';
 import Main from './Main';
 import Footer from './Footer';
-import HeroSection from './HeroSection';
-import Highlights from './Highlights';
+import CallToAction from './CallToAction';
+import Specials from './Specials';
 import CustomersSay from './CustomersSay';
-import About from './About';
+import Chicago from './Chicago';
+import Menu from './Menu';
+import DishCard from './DishCard';
+import BookingSection from './BookingSection';
+import BookingForm from './BookingForm';
 
-export { Header, Nav, Main, Footer, HeroSection, Highlights, CustomersSay, About };
+export {
+  Header,
+  Nav,
+  Main,
+  Footer,
+  CallToAction,
+  Specials,
+  CustomersSay,
+  Chicago,
+  Menu,
+  DishCard,
+  BookingSection,
+  BookingForm,
+};

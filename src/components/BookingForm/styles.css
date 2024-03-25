@@ -1,0 +1,95 @@
+.booking-form {
+  width: 100%;
+  padding: 1rem;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+}
+
+.booking-form fieldset {
+  padding: 1rem;
+  border: 1px solid #495e57;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.booking-form legend {
+  color: #495e57;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 0 16px;
+}
+
+.booking-form .form-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.booking-form .form-control:last-child {
+  margin-bottom: 0;
+}
+
+.booking-form label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.booking-form .required {
+  padding-right: 2px;
+  font-size: 24px;
+  vertical-align: middle;
+  color: rgb(114, 3, 3);
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  text-transform: capitalize;
+  background-color: #ddd;
+  border: none;
+  outline: none;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  border-top: 1px solid #495e57;
+}
+
+.booking-form textarea {
+  text-transform: unset;
+}
+
+.booking-form .submit-btn {
+  display: block;
+  padding: 8px 12px;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  border: 1px solid #495e57;
+  background-color: #495e57;
+  transition: all 0.4s linear;
+}
+
+.booking-form .submit-btn:hover,
+.booking-form .submit-btn:focus {
+  border-color: #000;
+  color: #000;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../images/smallLogo.png';
 import './styles.css';
 function Footer() {
@@ -12,22 +13,22 @@ function Footer() {
           <h4>doormat navigation</h4>
           <ul>
             <li>
-              <a href="/">home</a>
+              <Link to="/">home</Link>
             </li>
             <li>
-              <a href="/about">about</a>
+              <Link to="/about">about</Link>
             </li>
             <li>
-              <a href="/menu">menu</a>
+              <Link to="/menu">menu</Link>
             </li>
             <li>
-              <a href="/bookings">reservations</a>
+              <Link to="/bookings">reservations</Link>
             </li>
             <li>
-              <a href="/order">order online</a>
+              <Link to="/order">order online</Link>
             </li>
             <li>
-              <a href="/login">login</a>
+              <Link to="/login">login</Link>
             </li>
           </ul>
         </nav>

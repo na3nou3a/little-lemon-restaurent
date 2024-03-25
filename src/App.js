@@ -1,13 +1,6 @@
-import {
-  Header,
-  Nav,
-  Main,
-  Footer,
-  HeroSection,
-  Highlights,
-  CustomersSay,
-  About,
-} from './components';
+import { Route, Routes } from 'react-router-dom';
+import { Header, Nav, Footer } from './components';
+import { HomePage, AboutPage, BookingPage, MenuPage, OrderOnlinePage, LoginPage } from './pages';
 import './App.css';
 
 function App() {
@@ -18,12 +11,14 @@ function App() {
           <Header />
           <Nav />
         </div>
-        <Main>
-          <HeroSection />
-          <Highlights />
-          <CustomersSay />
-          <About />
-        </Main>
+        <Routes>
+          <Route element={<HomePage />} path="/" />
+          <Route element={<AboutPage />} path="/about" />
+          <Route element={<BookingPage />} path="/bookings" />
+          <Route element={<MenuPage />} path="/menu" />
+          <Route element={<OrderOnlinePage />} path="/order" />
+          <Route element={<LoginPage />} path="/login" />
+        </Routes>
         <Footer />
       </div>
     </>

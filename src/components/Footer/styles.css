@@ -1,5 +1,5 @@
 .footer {
-  background-color: #495e57;
+  background-color: #edefee;
   padding: 1rem 0;
 }
 
@@ -60,7 +60,6 @@
 .footer a:link,
 .footer a:visited {
   text-transform: capitalize;
-  color: #fff;
 }
 
 .footer a:hover,
@@ -72,7 +71,7 @@
 .footer a,
 .footer li {
   font-size: 1rem;
-  color: #fff;
+  color: #495e57;
 }
 
 @media (min-width: 576px) {

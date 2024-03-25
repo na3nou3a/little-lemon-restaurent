@@ -7,7 +7,7 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: flex-start;
   gap: 8px;
 }
 
@@ -39,22 +39,11 @@
   font-size: 18px;
   max-width: 300px;
 }
-
-.hero-section .link-btn {
-  border: 2px solid #f4ce14;
-  margin-top: 2rem;
-}
-
+/* call to action btn */
 .hero-section .link-btn:link,
 .hero-section .link-btn:visited {
-  color: #000;
-  background-color: #f4ce14;
-}
-
-.hero-section .link-btn:hover,
-.hero-section .link-btn:focus {
-  color: #f4ce14;
-  background-color: #495e57;
+  font-weight: 600;
+  margin-top: 2rem;
 }
 
 .hero-section .img {

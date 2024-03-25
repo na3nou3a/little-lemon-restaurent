@@ -1,0 +1,89 @@
+.booking-section {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.73)),
+    url('../../images/restaurant.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.booking-section .content {
+  padding: 2rem 1rem;
+}
+
+.booking-section .header {
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.booking-section .title {
+  font-size: 40px;
+  text-align: center;
+  color: #f4ce14;
+  padding: 4px 0;
+}
+
+.booking-section .sub-title {
+  font-size: 28px;
+  font-weight: 500;
+  color: #fff;
+  padding: 4px 0;
+  margin-bottom: 1.3rem;
+}
+
+.booking-section .text {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.booking-section .text:last-child {
+  margin-bottom: 0;
+}
+
+.booking-section .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.booking-section .description {
+  width: 100%;
+}
+
+/* RESPONSIVNESS */
+
+@media (min-width: 576px) {
+  .booking-section .title {
+    font-size: 48px;
+  }
+
+  .booking-section .sub-title {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  .booking-section .title {
+    font-size: 58px;
+  }
+
+  .booking-section .wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: unset;
+  }
+
+  .booking-section .description {
+    max-width: 500px;
+  }
+
+  .booking-section .booking-form {
+    max-width: 500px;
+    margin: unset;
+    margin-left: auto;
+  }
+}
