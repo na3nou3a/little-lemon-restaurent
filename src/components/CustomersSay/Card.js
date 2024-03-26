@@ -7,7 +7,9 @@ function Card({ client }) {
     <article className="card">
       <h3 className="star-rating">
         {[...Array(5)].map((star, index) => {
-          return <FaStar size={26} color={index + 1 <= rating ? '#ffc107' : '#e4e5e9'} />;
+          return (
+            <FaStar key={index} size={26} color={index + 1 <= rating ? '#ffc107' : '#e4e5e9'} />
+          );
         })}
       </h3>
       <div className="profile">

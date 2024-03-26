@@ -57,7 +57,6 @@
   font-size: 14px;
   padding: 5px 8px;
   border-radius: 4px;
-  text-transform: capitalize;
   background-color: #ddd;
   border: none;
   outline: none;
@@ -67,10 +66,6 @@
 .booking-form select:focus,
 .booking-form textarea:focus {
   border-top: 1px solid #495e57;
-}
-
-.booking-form textarea {
-  text-transform: unset;
 }
 
 .booking-form .submit-btn {

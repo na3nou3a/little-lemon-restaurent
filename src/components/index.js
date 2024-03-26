@@ -10,6 +10,7 @@ import Menu from './Menu';
 import DishCard from './DishCard';
 import BookingSection from './BookingSection';
 import BookingForm from './BookingForm';
+import ConfirmBooking from './ConfirmBooking';
 
 export {
   Header,
@@ -24,4 +25,5 @@ export {
   DishCard,
   BookingSection,
   BookingForm,
+  ConfirmBooking,
 };

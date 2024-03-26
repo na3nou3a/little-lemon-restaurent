@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 import { BookingForm } from '../../components';
 
-function BookingSection() {
+function BookingSection(props) {
   return (
     <section className="booking-section">
       <div className="content max-width">
@@ -18,7 +18,7 @@ function BookingSection() {
             </p>
             <p className="text">Book a table with us to share in this experience.</p>
           </article>
-          <BookingForm />
+          <BookingForm {...props} />
         </div>
       </div>
     </section>

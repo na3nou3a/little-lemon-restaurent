@@ -1,10 +1,10 @@
 import React from 'react';
 import { Main, BookingSection } from '../components';
 
-const BookingPage = () => {
+const BookingPage = (props) => {
   return (
     <Main>
-      <BookingSection />
+      <BookingSection {...props} />
     </Main>
   );
 };
