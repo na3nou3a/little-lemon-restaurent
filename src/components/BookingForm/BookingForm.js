@@ -33,13 +33,7 @@ function BookingForm({ formState, setFormState, availableTimes, dispatch }) {
               dispatch({ type: 'update_avalable_times', date: date });
             }}
           />
-          {new Date(date) < new Date() ? (
-            <p className="error-msg">please select a valid date</p>
-          ) : (
-            ''
-          )}
         </div>
-        {date ? (
           <div className="form-control">
             <label htmlFor="time">
               <span className="required">*</span>time:
@@ -57,12 +51,9 @@ function BookingForm({ formState, setFormState, availableTimes, dispatch }) {
               ))}
             </select>
           </div>
-        ) : (
-          false
-        )}
 
         <div className="form-control">
-          <label htmlFor="guests">Number of guests:</label>
+          <label htmlFor="guests">number of guests:</label>
           <input
             type="number"
             placeholder="1"
@@ -82,6 +73,7 @@ function BookingForm({ formState, setFormState, availableTimes, dispatch }) {
           >
             <option>Select Occasion</option>
             <option>Birthday</option>
+            <option>Engagment</option>
             <option>Anniversary</option>
           </select>
         </div>
@@ -140,7 +132,7 @@ function BookingForm({ formState, setFormState, availableTimes, dispatch }) {
           />
         </div>
       </fieldset>
-      <input className="submit-btn" type="submit" value="Make Your reservation" />
+      <input className="submit-btn" type="submit" value="make your reservation" />
     </form>
   );
 }

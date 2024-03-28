@@ -3,7 +3,6 @@ const initializeTimes = (date) => {
 };
 
 const fetchAPI = (date) => {
-  if (!date) return [];
   let timeStart = 17;
   let timeEnd = 23;
 
@@ -31,4 +30,4 @@ const updateTimes = (state, action) => {
   return state;
 };
 
-export { initializeTimes, updateTimes };
+export { initializeTimes, updateTimes,  fetchAPI};
