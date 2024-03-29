@@ -1,15 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import './styles.css';
 
-function BookingForm({ formState, setFormState, availableTimes, dispatch }) {
+function BookingForm({ formState, setFormState, availableTimes, dispatch, handleSubmit }) {
   const { date, time, numOfGuests, occasion, instructions, name, email, phone } = formState;
-  const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate('/confirm-bookings');
-  };
 
   return (
     <form className="booking-form" onSubmit={handleSubmit}>
@@ -34,23 +27,23 @@ function BookingForm({ formState, setFormState, availableTimes, dispatch }) {
             }}
           />
         </div>
-          <div className="form-control">
-            <label htmlFor="time">
-              <span className="required">*</span>time:
-            </label>
-            <select
-              id="time"
-              name="time"
-              required
-              value={time}
-              onChange={(e) => setFormState({ ...formState, time: e.target.value })}
-            >
-              <option>Select a Time</option>
-              {availableTimes.bookingSlots.map((t, i) => (
-                <option key={i}>{t}</option>
-              ))}
-            </select>
-          </div>
+        <div className="form-control">
+          <label htmlFor="time">
+            <span className="required">*</span>time:
+          </label>
+          <select
+            id="time"
+            name="time"
+            required
+            value={time}
+            onChange={(e) => setFormState({ ...formState, time: e.target.value })}
+          >
+            <option>Select a Time</option>
+            {availableTimes.bookingSlots.map((t, i) => (
+              <option key={i}>{t}</option>
+            ))}
+          </select>
+        </div>
 
         <div className="form-control">
           <label htmlFor="guests">number of guests:</label>
@@ -65,7 +58,7 @@ function BookingForm({ formState, setFormState, availableTimes, dispatch }) {
           />
         </div>
         <div className="form-control">
-          <label htmlFor="occasion">Occasion: (optional)</label>
+          <label htmlFor="occasion">occasion: (optional)</label>
           <select
             id="occasion"
             value={occasion}
@@ -73,7 +66,7 @@ function BookingForm({ formState, setFormState, availableTimes, dispatch }) {
           >
             <option>Select Occasion</option>
             <option>Birthday</option>
-            <option>Engagment</option>
+            <option>Engagement</option>
             <option>Anniversary</option>
           </select>
         </div>

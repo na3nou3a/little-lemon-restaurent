@@ -7,44 +7,53 @@ function ConfirmBooking({ formState }) {
     <section className="confirm-booking">
       <div className="content max-width">
         <header className="header">
-          <h1 className="title">congratulations you completed your reservation!</h1>
+          <h1 className="title">Thank you for your reservation!</h1>
+          <p className="lead-text">We Look Forward To Seeing You At Little Lemon.</p>
         </header>
         <div className="body">
           <h2 className="sub-title">your reservation details</h2>
           <div className="details">
-            <p className="text">
-              name: <span className="slot">{name}</span>
-            </p>
-            <p className="text">
-              email: <span className="slot">{email}</span>
-            </p>
-            <p className="text">
-              phone: <span className="slot">{phone}</span>
-            </p>
-            <p className="text">
-              reservation date: <span className="slot">{date}</span>
-            </p>
-            <p className="text">
-              reservation time: <span className="slot">{time}</span>
-            </p>
+            <div className="detail">
+              <h3 className="detail-title">name:</h3>
+              <p className="slot">{name}</p>
+            </div>
+            <div className="detail">
+              <h3 className="detail-title">email:</h3>
+              <p className="slot">{email}</p>
+            </div>
+            <div className="detail">
+              <h3 className="detail-title">phone:</h3>
+              <p className="slot">{phone}</p>
+            </div>
+            <div className="detail">
+              <h3 className="detail-title">reservation date:</h3>
+              <p className="slot">{date}</p>
+            </div>
+            <div className="detail">
+              <h3 className="detail-title">reservation time:</h3>
+              <p className="slot">{time}</p>
+            </div>
             {numOfGuests > 1 ? (
-              <p className="text">
-                number of guests: <span className="slot">{numOfGuests}</span>
-              </p>
+              <div className="detail">
+                <h3 className="detail-title">number of guests:</h3>
+                <p className="slot">{numOfGuests}</p>
+              </div>
             ) : (
               false
             )}
             {occasion ? (
-              <p className="text">
-                occasion: <span className="slot">{occasion}</span>
-              </p>
+              <div className="detail">
+                <h3 className="detail-title">occasion:</h3>
+                <p className="slot">{occasion}</p>
+              </div>
             ) : (
               false
             )}
             {instructions ? (
-              <p className="text">
-                your instructions: <span className="slot">{instructions}</span>
-              </p>
+              <div className="detail">
+                <h3 className="detail-title">your instructions:</h3>
+                <p className="slot">{instructions}</p>
+              </div>
             ) : (
               false
             )}

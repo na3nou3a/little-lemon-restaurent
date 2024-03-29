@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import { Header, Nav, Footer } from './components';
 import {
   HomePage,
@@ -14,9 +14,8 @@ import { useState, useReducer } from 'react';
 import { initializeTimes, updateTimes } from './utils/times';
 
 function App() {
-  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes);
   const [formState, setFormState] = useState({
-    date: '',
+    date: new Date(),
     time: '',
     numOfGuests: 1,
     occasion: '',
@@ -26,6 +25,12 @@ function App() {
     phone: '',
   });
 
+  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes(new Date()));
+  const navigate = useNavigate();
+    const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate('/confirm-bookings');
+  };
   return (
     <>
       <div className="page-wrapper grid">
@@ -39,10 +44,12 @@ function App() {
           <Route
             element={
               <BookingPage
-                formState={formState}
-                setFormState={setFormState}
-                availableTimes={availableTimes}
-                dispatch={dispatch}
+                formState
+                setFormState
+                availableTimes
+                dispatch
+                handleSubmit
+                navigate
               />
             }
             path="/bookings"

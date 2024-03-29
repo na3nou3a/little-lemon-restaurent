@@ -1,0 +1,93 @@
+.confirm-booking {
+}
+
+.confirm-booking .content {
+  padding: 2rem 1rem;
+}
+
+.confirm-booking .header {
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.confirm-booking .title {
+  font-size: 40px;
+  text-align: center;
+  color: #000;
+  padding: 8px 0;
+  margin-bottom: 5px;
+}
+
+.confirm-booking .lead-text {
+  font-size: 18px;
+  color: #333;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.confirm-booking .body {
+  max-width: 600px;
+  padding: 2rem;
+  margin: auto;
+  background-color: #495e57;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.confirm-booking .sub-title {
+  font-size: 28px;
+  font-weight: 500;
+  padding: 4px 0;
+  margin-bottom: 1rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.confirm-booking .details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.confirm-booking .detail {
+  width: fit-content;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+
+.confirm-booking .detail-title {
+  flex: 20%;
+  padding: 8px 0;
+  font-size: 1.2rem;
+  color: #ee9972;
+  text-transform: uppercase;
+  text-decoration: underline;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+.confirm-booking .slot {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* RESPONSIVNESS */
+
+@media (min-width: 576px) {
+  .confirm-booking .title {
+    font-size: 48px;
+  }
+
+  .confirm-booking .sub-title {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  .confirm-booking .title {
+    font-size: 58px;
+  }
+}

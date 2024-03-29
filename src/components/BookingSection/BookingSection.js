@@ -7,7 +7,7 @@ function BookingSection(props) {
     <section className="booking-section">
       <div className="content max-width">
         <header className="header">
-          <h1 className="title">lemon restaurant reservation</h1>
+          <h1 className="title">little lemon reservation</h1>
         </header>
         <div className="wrapper">
           <article className="description">
