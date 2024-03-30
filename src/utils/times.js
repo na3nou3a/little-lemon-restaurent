@@ -1,33 +1,41 @@
-const initializeTimes = (date) => {
-  return { bookingSlots: fetchAPI(date) };
+const seededRandom = function (seed) {
+  const m = 2 ** 35 - 31;
+  const a = 185852;
+  let s = seed % m;
+  return function () {
+    return (s = (s * a) % m) / m;
+  };
 };
 
-const fetchAPI = (date) => {
-  let timeStart = 17;
-  let timeEnd = 23;
+const fetchAPI = function (date) {
+  let result = [];
+  let random = seededRandom(date.getDate());
 
-  const availableTimes = [];
-  const helper = [':00', ':30'];
-
-  for (let i = timeStart; i <= timeEnd; i++) {
-    const r = Math.random();
-    if (i === 23) {
-      availableTimes.push(`${i}${helper[0]}`);
-      continue;
+  for (let i = 17; i <= 23; i++) {
+    if (random() < 0.5) {
+      result.push(i + ':00');
     }
-    if (r <= 0.5) {
-      availableTimes.push(`${i}${helper[0]}`);
-    } else {
-      availableTimes.push(`${i}${helper[1]}`);
+    if (random() < 0.5) {
+      result.push(i + ':30');
     }
   }
-  return availableTimes;
+  return result;
 };
 
-const updateTimes = (state, action) => {
+const initializeTimes = function () {
+  const today = new Date();
+  return { bookingSlots: fetchAPI(today) };
+};
+
+const updateTimes = function (state, action) {
   if (action.type === 'update_avalable_times')
     return { ...state, bookingSlots: fetchAPI(action.date) };
   return state;
 };
 
-export { initializeTimes, updateTimes,  fetchAPI};
+const submitAPI = function (formData) {
+  if (!true) console.log(formData);
+  return true;
+};
+
+export { initializeTimes, updateTimes, fetchAPI, submitAPI };

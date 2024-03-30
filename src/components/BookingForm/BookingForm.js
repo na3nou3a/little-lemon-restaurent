@@ -4,6 +4,13 @@ import './styles.css';
 function BookingForm({ formState, setFormState, availableTimes, dispatch, handleSubmit }) {
   const { date, time, numOfGuests, occasion, instructions, name, email, phone } = formState;
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
   return (
     <form className="booking-form" onSubmit={handleSubmit}>
       <fieldset>
@@ -19,10 +26,7 @@ function BookingForm({ formState, setFormState, availableTimes, dispatch, handle
             required
             value={date}
             onChange={(e) => {
-              setFormState({
-                ...formState,
-                date: e.target.value,
-              });
+              handleChange(e);
               dispatch({ type: 'update_avalable_times', date: date });
             }}
           />
@@ -31,13 +35,7 @@ function BookingForm({ formState, setFormState, availableTimes, dispatch, handle
           <label htmlFor="time">
             <span className="required">*</span>time:
           </label>
-          <select
-            id="time"
-            name="time"
-            required
-            value={time}
-            onChange={(e) => setFormState({ ...formState, time: e.target.value })}
-          >
+          <select id="time" name="time" required value={time} onChange={handleChange}>
             <option>Select a Time</option>
             {availableTimes.bookingSlots.map((t, i) => (
               <option key={i}>{t}</option>
@@ -53,17 +51,14 @@ function BookingForm({ formState, setFormState, availableTimes, dispatch, handle
             min="1"
             max="10"
             id="guests"
+            name="numOfGuests"
             value={numOfGuests}
-            onChange={(e) => setFormState({ ...formState, numOfGuests: e.target.value })}
+            onChange={handleChange}
           />
         </div>
         <div className="form-control">
           <label htmlFor="occasion">occasion: (optional)</label>
-          <select
-            id="occasion"
-            value={occasion}
-            onChange={(e) => setFormState({ ...formState, occasion: e.target.value })}
-          >
+          <select id="occasion" name="occasion" value={occasion} onChange={handleChange}>
             <option>Select Occasion</option>
             <option>Birthday</option>
             <option>Engagement</option>
@@ -79,7 +74,7 @@ function BookingForm({ formState, setFormState, availableTimes, dispatch, handle
             rows={10}
             placeholder="Some Instructions..."
             value={instructions}
-            onChange={(e) => setFormState({ ...formState, instructions: e.target.value })}
+            onChange={handleChange}
           ></textarea>
         </div>
       </fieldset>
@@ -91,11 +86,11 @@ function BookingForm({ formState, setFormState, availableTimes, dispatch, handle
           </label>
           <input
             type="text"
-            name="fullname"
+            name="name"
             id="fullname"
             required
             value={name}
-            onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+            onChange={handleChange}
           />
         </div>
         <div className="form-control">
@@ -108,7 +103,7 @@ function BookingForm({ formState, setFormState, availableTimes, dispatch, handle
             id="email"
             required
             value={email}
-            onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+            onChange={handleChange}
           />
         </div>
         <div className="form-control">
@@ -121,7 +116,7 @@ function BookingForm({ formState, setFormState, availableTimes, dispatch, handle
             id="phone"
             required
             value={phone}
-            onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+            onChange={handleChange}
           />
         </div>
       </fieldset>

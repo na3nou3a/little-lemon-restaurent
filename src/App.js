@@ -25,11 +25,20 @@ function App() {
     phone: '',
   });
 
-  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes(new Date()));
+  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes(formState.date));
   const navigate = useNavigate();
-    const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     navigate('/confirm-bookings');
+  };
+
+  const bokingPageProps = {
+    formState,
+    setFormState,
+    availableTimes,
+    dispatch,
+    navigate,
+    handleSubmit,
   };
   return (
     <>
@@ -41,19 +50,7 @@ function App() {
         <Routes>
           <Route element={<HomePage />} path="/" />
           <Route element={<AboutPage />} path="/about" />
-          <Route
-            element={
-              <BookingPage
-                formState
-                setFormState
-                availableTimes
-                dispatch
-                handleSubmit
-                navigate
-              />
-            }
-            path="/bookings"
-          />
+          <Route element={<BookingPage {...bokingPageProps} />} path="/bookings" />
           <Route element={<ConfirmBookingPage formState={formState} />} path="/confirm-bookings" />
           <Route element={<MenuPage />} path="/menu" />
           <Route element={<OrderOnlinePage />} path="/order" />

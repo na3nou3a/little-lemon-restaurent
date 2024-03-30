@@ -26,7 +26,7 @@
 }
 
 .confirm-booking .body {
-  max-width: 600px;
+  max-width: 420px;
   padding: 2rem;
   margin: auto;
   background-color: #495e57;
@@ -47,10 +47,11 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: fit-content;
+  margin: auto;
 }
 
 .confirm-booking .detail {
-  width: fit-content;
   display: flex;
   justify-content: flex-start;
   align-items: center;
