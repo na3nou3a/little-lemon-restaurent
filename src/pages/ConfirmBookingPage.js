@@ -1,10 +1,10 @@
 import React from 'react';
-import { Main, ConfirmBooking } from '../components';
+import { Main, ConfirmedBooking } from '../components';
 
 const ConfirmBookingPage = ({ formState }) => {
   return (
     <Main>
-      <ConfirmBooking formState={formState} />
+      <ConfirmedBooking formState={formState} />
     </Main>
   );
 };

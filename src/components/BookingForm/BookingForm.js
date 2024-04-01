@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-function BookingForm({ formState, setFormState, availableTimes, dispatch, handleSubmit }) {
+function BookingForm({ formState, setFormState, availableTimes, dispatch, submitForm }) {
   const { date, time, numOfGuests, occasion, instructions, name, email, phone } = formState;
 
   const handleChange = (e) => {
@@ -12,7 +12,7 @@ function BookingForm({ formState, setFormState, availableTimes, dispatch, handle
     });
   };
   return (
-    <form className="booking-form" onSubmit={handleSubmit}>
+    <form className="booking-form" onSubmit={submitForm}>
       <fieldset>
         <legend>reservation info:</legend>
         <div className="form-control">

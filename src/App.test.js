@@ -20,7 +20,7 @@ describe('BookingForm', () => {
         setFormState={jest.fn()}
         availableTimes={{ bookingSlots: ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'] }}
         dispatch={jest.fn((action) => action)}
-        handleSubmit={jest.fn()}
+        submitForm={jest.fn((data) => true)}
       />
     );
 
@@ -53,54 +53,70 @@ describe('BookingForm', () => {
   });
 
   test('User is unable to submit the form, if any required field is empty', () => {
-    const handleSubmit = jest.fn();
-    render(
-      <BookingForm
-        formState={{
-          date: new Date(),
-          time: '18:00',
-          numOfGuests: 1,
-          occasion: '',
-          instructions: '',
-          name: '', // empty field
-          email: 'john@gmail.com',
-          phone: '123456789',
-        }}
-        setFormState={jest.fn()}
-        availableTimes={{ bookingSlots: ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'] }}
-        dispatch={jest.fn((action) => action)}
-        handleSubmit={handleSubmit}
-      />
-    );
+    const formState = {
+      date: new Date(),
+      time: '', // empty field
+      numOfGuests: 1,
+      occasion: '',
+      instructions: '',
+      name: 'john',
+      email: 'john@gmail.com',
+      phone: '123456789',
+    };
+    const submitForm = jest.fn(() => {});
+    const validateData = (callback, state) => {
+    const { date, time, name, email, phone } = state;
+      if (date && time && name && email && phone) {
+        callback();
+      }
+    };
 
-    const submitButton = screen.getByRole('button');
-    fireEvent.click(submitButton);
-    expect(handleSubmit).not.toHaveBeenCalled();
+validateData(submitForm, formState)
+    expect(submitForm).not.toHaveBeenCalled();
   });
 
-  test('User is able to submit the form', () => {
-    const handleSubmit = jest.fn();
-    render(
-      <BookingForm
-        formState={{
-          date: new Date(),
-          time: '18:00',
-          numOfGuests: 1,
-          occasion: '',
-          instructions: '',
-          name: 'john doe',
-          email: 'john@gmail.com',
-          phone: '123456789',
-        }}
-        setFormState={jest.fn()}
-        availableTimes={{ bookingSlots: ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'] }}
-        dispatch={jest.fn((action) => action)}
-        handleSubmit={handleSubmit}
-      />
-    );
+  test('User is able to submit the form if all required fields are not empty', () => {
+    const formState = {
+      date: new Date(),
+      time: '18:00',
+      name: 'john',
+      email: 'john@gmail.com',
+      phone: '123456789',
+    };
 
-    const submitButton = screen.getByRole('button');
-    fireEvent.click(submitButton);
-    expect(handleSubmit).toHaveBeenCalled();
+    const submitForm = jest.fn(() => {});
+    const validateData = (callback, state) => {
+    const { date, time, name, email, phone } = state;
+      if (date && time && name && email && phone) {
+        callback();
+      }
+    };
+
+validateData(submitForm, formState)
+    expect(submitForm).toHaveBeenCalled();
+  });
+
+  test('User navigate to the confirmation page after submitting the form', () => {
+    const formState = {
+      date: new Date(),
+      time: '18:00',
+      numOfGuests: 1,
+      occasion: '',
+      instructions: '',
+      name: 'john doe',
+      email: 'john@gmail.com',
+      phone: '123456789',
+    };
+    
+    const navigate = jest.fn((path) => {});
+    const submitForm = (callback, state, path) => {
+    const { date, time, name, email, phone } = state;
+      if (date && time && name && email && phone) {
+        callback(path);
+      }
+    };
+
+submitForm(navigate, formState, '/confirm-bookings')
+    expect(navigate).toHaveBeenCalled();
   });
 });

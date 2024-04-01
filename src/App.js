@@ -12,6 +12,7 @@ import {
 import './App.css';
 import { useState, useReducer } from 'react';
 import { initializeTimes, updateTimes } from './utils/times';
+import { submitAPI } from './utils/API';
 
 function App() {
   const [formState, setFormState] = useState({
@@ -27,18 +28,20 @@ function App() {
 
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes(formState.date));
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
+  const submitForm = (e) => {
     e.preventDefault();
-    navigate('/confirm-bookings');
+    if (submitAPI(formState)) {
+      navigate('/confirm-bookings');
+    }
   };
 
-  const bokingPageProps = {
+  const bookingPageProps = {
     formState,
     setFormState,
     availableTimes,
     dispatch,
     navigate,
-    handleSubmit,
+    submitForm,
   };
   return (
     <>
@@ -50,7 +53,7 @@ function App() {
         <Routes>
           <Route element={<HomePage />} path="/" />
           <Route element={<AboutPage />} path="/about" />
-          <Route element={<BookingPage {...bokingPageProps} />} path="/bookings" />
+          <Route element={<BookingPage {...bookingPageProps} />} path="/bookings" />
           <Route element={<ConfirmBookingPage formState={formState} />} path="/confirm-bookings" />
           <Route element={<MenuPage />} path="/menu" />
           <Route element={<OrderOnlinePage />} path="/order" />

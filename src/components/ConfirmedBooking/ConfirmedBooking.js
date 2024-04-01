@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-function ConfirmBooking({ formState }) {
+function ConfirmedBooking({ formState }) {
   const { date, time, numOfGuests, occasion, instructions, name, email, phone } = formState;
   return (
     <section className="confirm-booking">
@@ -64,4 +64,4 @@ function ConfirmBooking({ formState }) {
   );
 }
 
-export default ConfirmBooking;
+export default ConfirmedBooking;
