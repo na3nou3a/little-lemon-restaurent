@@ -21,33 +21,38 @@ describe('BookingForm', () => {
         availableTimes={{ bookingSlots: ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'] }}
         dispatch={jest.fn((action) => action)}
         submitForm={jest.fn((data) => true)}
+        isDisabled={true}
+        setIsDisabled={jest.fn(() => false)}
+        formErrors={{}}
+        setFormErrors={jest.fn(() => {})}
+        minDate={new Date()}
       />
     );
 
-    // label '*Date:' and Input field
-    expect(screen.getByText(/date:/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/date:/i)).toBeInTheDocument();
-    // label '*Time:' and select Input field
-    expect(screen.getByText(/time:/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/time:/i)).toBeInTheDocument();
+    // label '*Date' and Input field
+    expect(screen.getAllByText(/date/i)[0]).toBeInTheDocument();
+    expect(screen.getByLabelText(/date/i)).toBeInTheDocument();
+    // label '*Time' and select Input field
+    expect(screen.getAllByText(/time/i)[0]).toBeInTheDocument();
+    expect(screen.getByLabelText(/time/i)).toBeInTheDocument();
     // label 'Number Of Guests' and Input field
-    expect(screen.getByText(/number of guests:/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/number of guests:/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/number of guests/i)[0]).toBeInTheDocument();
+    expect(screen.getByLabelText(/number of guests/i)).toBeInTheDocument();
     // label 'Occasion' and select Input field
-    expect(screen.getByText(/occasion:/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/occasion:/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/occasion/i)[0]).toBeInTheDocument();
+    expect(screen.getByLabelText(/occasion/i)).toBeInTheDocument();
     // label 'Special Instructions' and textaria
-    expect(screen.getByText('special instructions: (optional)')).toBeInTheDocument();
-    expect(screen.getByLabelText('special instructions: (optional)')).toBeInTheDocument();
-    // label 'Full Name:' and Input field
-    expect(screen.getByText(/full name:/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/full name:/i)).toBeInTheDocument();
-    // label 'Email:' and Input field
-    expect(screen.getByText(/email:/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/email:/i)).toBeInTheDocument();
-    // label 'Phone:' and Input field
-    expect(screen.getByText(/phone:/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/phone:/i)).toBeInTheDocument();
+    expect(screen.getAllByText('special instructions (optional)')[0]).toBeInTheDocument();
+    expect(screen.getByLabelText('special instructions (optional)')).toBeInTheDocument();
+    // label 'Full Name' and Input field
+    expect(screen.getAllByText(/full name/i)[0]).toBeInTheDocument();
+    expect(screen.getByLabelText(/full name/i)).toBeInTheDocument();
+    // label 'Email' and Input field
+    expect(screen.getAllByText(/email/i)[0]).toBeInTheDocument();
+    expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
+    // label 'Phone' and Input field
+    expect(screen.getAllByText(/phone/i)[0]).toBeInTheDocument();
+    expect(screen.getByLabelText(/phone/i)).toBeInTheDocument();
     // submit btn Input field
     expect(screen.getByDisplayValue(/make your reservation/i)).toBeInTheDocument();
   });
@@ -65,13 +70,13 @@ describe('BookingForm', () => {
     };
     const submitForm = jest.fn(() => {});
     const validateData = (callback, state) => {
-    const { date, time, name, email, phone } = state;
+      const { date, time, name, email, phone } = state;
       if (date && time && name && email && phone) {
         callback();
       }
     };
 
-validateData(submitForm, formState)
+    validateData(submitForm, formState);
     expect(submitForm).not.toHaveBeenCalled();
   });
 
@@ -86,13 +91,13 @@ validateData(submitForm, formState)
 
     const submitForm = jest.fn(() => {});
     const validateData = (callback, state) => {
-    const { date, time, name, email, phone } = state;
+      const { date, time, name, email, phone } = state;
       if (date && time && name && email && phone) {
         callback();
       }
     };
 
-validateData(submitForm, formState)
+    validateData(submitForm, formState);
     expect(submitForm).toHaveBeenCalled();
   });
 
@@ -107,16 +112,16 @@ validateData(submitForm, formState)
       email: 'john@gmail.com',
       phone: '123456789',
     };
-    
+
     const navigate = jest.fn((path) => {});
     const submitForm = (callback, state, path) => {
-    const { date, time, name, email, phone } = state;
+      const { date, time, name, email, phone } = state;
       if (date && time && name && email && phone) {
         callback(path);
       }
     };
 
-submitForm(navigate, formState, '/confirm-bookings')
+    submitForm(navigate, formState, '/confirm-bookings');
     expect(navigate).toHaveBeenCalled();
   });
 });
