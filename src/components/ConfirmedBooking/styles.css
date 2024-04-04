@@ -26,8 +26,8 @@
 }
 
 .confirm-booking .body {
-  max-width: 420px;
-  padding: 2rem;
+  /* max-width: 620px; */
+  padding: 1rem;
   margin: auto;
   background-color: #495e57;
   color: #fff;
@@ -38,7 +38,7 @@
   font-size: 28px;
   font-weight: 500;
   padding: 4px 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   text-align: center;
   letter-spacing: 1px;
 }
@@ -47,32 +47,45 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: fit-content;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 550px;
   margin: auto;
+  background-color: #f4ce14;
+  border-radius: 8px;
 }
 
 .confirm-booking .detail {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.confirm-booking .detail.instructions {
+  flex-direction: column;
   gap: 16px;
 }
 
 .confirm-booking .detail-title {
   flex: 20%;
-  padding: 8px 0;
   font-size: 1.2rem;
+  font-weight: 700;
   color: #ee9972;
   text-transform: uppercase;
   text-decoration: underline;
   letter-spacing: 1px;
   word-spacing: 2px;
+  text-shadow: 1px 1px 1px #000;
 }
 
 .confirm-booking .slot {
   font-size: 1rem;
   font-weight: 400;
-  color: #fff;
+  color: #000;
 }
 
 /* RESPONSIVNESS */
@@ -90,5 +103,8 @@
 @media (min-width: 768px) {
   .confirm-booking .title {
     font-size: 58px;
+  }
+  .confirm-booking .sub-title {
+    font-size: 42px;
   }
 }

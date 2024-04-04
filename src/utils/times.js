@@ -6,6 +6,7 @@ const initializeTimes = function () {
 };
 
 const updateTimes = function (state, action) {
+  console.log(action.date);
   if (action.type === 'update_avalable_times')
     return { ...state, bookingSlots: fetchAPI(action.date) };
   return state;

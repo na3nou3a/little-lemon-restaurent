@@ -10,6 +10,7 @@ import Menu from './Menu';
 import DishCard from './DishCard';
 import BookingSection from './BookingSection';
 import BookingForm from './BookingForm';
+import ErrorMessage from './ErrorMessage';
 import ConfirmedBooking from './ConfirmedBooking';
 
 export {
@@ -25,5 +26,6 @@ export {
   DishCard,
   BookingSection,
   BookingForm,
+  ErrorMessage,
   ConfirmedBooking,
 };

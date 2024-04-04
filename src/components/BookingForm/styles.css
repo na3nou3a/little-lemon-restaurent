@@ -68,6 +68,11 @@
   border-top: 1px solid #495e57;
 }
 
+.booking-form input.input-error,
+.booking-form select.input-error {
+  border: 1px solid red;
+}
+
 .booking-form .submit-btn {
   display: block;
   padding: 8px 12px;
@@ -87,4 +92,9 @@
 .booking-form .submit-btn:focus {
   border-color: #000;
   color: #000;
+}
+
+.booking-form .submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

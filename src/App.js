@@ -15,18 +15,30 @@ import { initializeTimes, updateTimes } from './utils/times';
 import { submitAPI } from './utils/API';
 
 function App() {
-  const [formState, setFormState] = useState({
-    date: new Date(),
-    time: '',
+  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
+  const minDate = new Date().toISOString().split('T')[0];
+  const initialValues = {
+    date: minDate,
+    time: availableTimes.bookingSlots[0],
     numOfGuests: 1,
     occasion: '',
     instructions: '',
     name: '',
     email: '',
     phone: '',
-  });
+  };
 
-  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes(formState.date));
+  const [formState, setFormState] = useState(initialValues);
+  const [formErrors, setFormErrors] = useState({
+    date: '',
+    time: '',
+    numOfGuests: '',
+    name: '',
+    email: '',
+    phone: '',
+  });
+  const [isDisabled, setIsDisabled] = useState(true);
+
   const navigate = useNavigate();
   const submitForm = (e) => {
     e.preventDefault();
@@ -40,8 +52,13 @@ function App() {
     setFormState,
     availableTimes,
     dispatch,
+    isDisabled,
+    setIsDisabled,
+    formErrors,
+    setFormErrors,
     navigate,
     submitForm,
+    minDate,
   };
   return (
     <>

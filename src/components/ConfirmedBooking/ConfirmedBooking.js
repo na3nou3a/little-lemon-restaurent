@@ -50,7 +50,7 @@ function ConfirmedBooking({ formState }) {
               false
             )}
             {instructions ? (
-              <div className="detail">
+              <div className="detail instructions">
                 <h3 className="detail-title">your instructions:</h3>
                 <p className="slot">{instructions}</p>
               </div>
