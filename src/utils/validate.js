@@ -119,4 +119,10 @@ export {
   validateName,
   validateEmail,
   validatePhone,
+  isValidDate,
+  isValidTime,
+  isValidNumOfGuests,
+  isValidName,
+  isValidEmail,
+  isValidPhone,
 };

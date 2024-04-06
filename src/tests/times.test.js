@@ -1,5 +1,5 @@
-import { initializeTimes, updateTimes } from './utils/times';
-import { fetchAPI, submitAPI } from './utils/API';
+import { initializeTimes, updateTimes } from '../utils/times';
+import { fetchAPI, submitAPI } from '../utils/API';
 
 describe('time functions', () => {
   const state = {

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
-import { BookingForm } from './components';
+import { BookingForm } from '../components';
 
 describe('BookingForm', () => {
   test('it renders BookingForm labels and fields', () => {
