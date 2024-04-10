@@ -1,0 +1,24 @@
+.menu-section {
+  background-color: #fff;
+}
+
+/* .menu-section .content {
+} */
+
+.menu-section .header {
+  margin-bottom: 1.5rem;
+}
+
+.menu-section .title {
+  text-align: center;
+}
+
+.menu-section .dish-cards {
+  background-color: #495e57;
+}
+
+/* RESPONSIVNESS */
+
+/* @media (min-width: 768px) {
+
+} */

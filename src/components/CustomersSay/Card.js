@@ -1,16 +1,26 @@
 import React from 'react';
-import { FaStar } from 'react-icons/fa';
+import { faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Card({ client }) {
   const { name, rating, review, img } = client;
+  const ratingLevels = { 0: faStar, 0.5: faStarHalfStroke, 1: faStar };
   return (
     <article className="card">
+      <h3 aria-hidden={true}>
+        {[...Array(5)].map((one, index) => (
+          <FontAwesomeIcon key={index} icon={faStar} size="sm" className="star-icon silver" />
+        ))}
+      </h3>
       <h3 className="star-rating">
-        {[...Array(5)].map((star, index) => {
-          return (
-            <FaStar key={index} size={26} color={index + 1 <= rating ? '#ffc107' : '#e4e5e9'} />
-          );
-        })}
+        {rating.map((ratingPoint, index) => (
+          <FontAwesomeIcon
+            key={index}
+            icon={ratingLevels[ratingPoint]}
+            size="sm"
+            className={ratingPoint === 0 ? 'star-icon silver' : 'star-icon gold'}
+          />
+        ))}
       </h3>
       <div className="profile">
         <img src={img} className="client-img" alt="client" />

@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import './bookingSection.css';
 import { BookingForm } from '../../components';
 
 function BookingSection(props) {

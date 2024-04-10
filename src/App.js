@@ -62,8 +62,8 @@ function App() {
   };
   return (
     <>
-      <div className="page-wrapper grid">
-        <div className="top-wrapper grid max-width">
+      <div className="page-wrapper">
+        <div className="top-wrapper max-width">
           <Header />
           <Nav />
         </div>

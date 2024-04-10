@@ -1,63 +1,45 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from '../../images/smallLogo.png';
-import './styles.css';
+import './footer.css';
+import { pageLinks, contactInfo, socialMedia } from '../../data';
 function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer-content max-width grid">
-        <div className="logo-container">
-          <img src={logo} alt="site logo" />
-        </div>
+    <footer className="footer section">
+      <div className="content max-width">
+        <img className="footer-logo" src={logo} alt="site logo" />
         <nav className="site-map">
-          <h4>doormat navigation</h4>
+          <h3>siteMap</h3>
           <ul>
-            <li>
-              <Link to="/">home</Link>
-            </li>
-            <li>
-              <Link to="/about">about</Link>
-            </li>
-            <li>
-              <Link to="/menu">menu</Link>
-            </li>
-            <li>
-              <Link to="/bookings">reservations</Link>
-            </li>
-            <li>
-              <Link to="/order">order online</Link>
-            </li>
-            <li>
-              <Link to="/login">login</Link>
-            </li>
+            {pageLinks.map((page, index) => (
+              <li key={index}>
+                <Link to={page.path}>{page.name}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
         <div className="contact">
-          <h4>contact</h4>
+          <h3>contact us</h3>
           <ul>
-            <li>23 Citrus Lane</li>
-            <li>123-456-7890</li>
-            <li>little.lemon@lemon.com</li>
+            {contactInfo.map((info, index) => (
+              <li key={index}>
+                <FontAwesomeIcon icon={info.icon} className="contact-icon" />
+                {info.value}
+              </li>
+            ))}
           </ul>
         </div>
         <nav className="social-media">
-          <h4>social media links</h4>
+          <h3>Connect with us</h3>
           <ul>
-            <li>
-              <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
-                facebook
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
-                instagram
-              </a>
-            </li>
-            <li>
-              <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
-                twitter
-              </a>
-            </li>
+            {socialMedia.map((link, index) => (
+              <li key={index}>
+                <a href={link.value} target="_blank" rel="noreferrer" title={link.name}>
+                  <FontAwesomeIcon icon={link.icon} size="lg" />
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>

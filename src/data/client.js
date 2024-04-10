@@ -7,7 +7,7 @@ const clients = [
   {
     id: 1,
     name: 'gina',
-    rating: 5,
+    rating: [1, 1, 1, 1, 0],
     review:
       'The restaurant has a great variety of dishes and all the ones I tried were excellent. In addition, the price is fair and the service is very attentive. I will definitely recommend it to my friends.',
     img: gina,
@@ -15,7 +15,7 @@ const clients = [
   {
     id: 2,
     name: 'jake',
-    rating: 4,
+    rating: [1, 1, 1, 1, 0.5],
     review:
       'I came to Little Lemon after a 5 hour flight from the East Coast. The food here tasted so delicious after the trip here.',
     img: jake,
@@ -23,7 +23,7 @@ const clients = [
   {
     id: 3,
     name: 'rosa',
-    rating: 5,
+    rating: [1, 1, 1, 0.5, 0],
     review:
       'This restaurant served as a perfect dinner for me after a long night of studying. I would definitely order from here again!',
     img: rosa,
@@ -31,7 +31,39 @@ const clients = [
   {
     id: 4,
     name: 'raymond',
-    rating: 4,
+    rating: [1, 1, 1, 1, 0],
+    review:
+      'I loved the experience at the restaurant! The food was delicious and the service was exceptional. I will definitely be back more often!',
+    img: raymond,
+  },
+  {
+    id: 5,
+    name: 'lisa',
+    rating: [1, 1, 0.5, 0, 0],
+    review:
+      'The restaurant has a great variety of dishes and all the ones I tried were excellent. In addition, the price is fair and the service is very attentive. I will definitely recommend it to my friends.',
+    img: gina,
+  },
+  {
+    id: 6,
+    name: 'john',
+    rating: [1, 1, 0, 0, 0],
+    review:
+      'I came to Little Lemon after a 5 hour flight from the East Coast. The food here tasted so delicious after the trip here.',
+    img: jake,
+  },
+  {
+    id: 7,
+    name: 'tilly',
+    rating: [1, 1, 1, 0.5, 0],
+    review:
+      'This restaurant served as a perfect dinner for me after a long night of studying. I would definitely order from here again!',
+    img: rosa,
+  },
+  {
+    id: 8,
+    name: 'bob',
+    rating: [1, 1, 1, 0, 0],
     review:
       'I loved the experience at the restaurant! The food was delicious and the service was exceptional. I will definitely be back more often!',
     img: raymond,

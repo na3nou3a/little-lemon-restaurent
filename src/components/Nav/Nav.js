@@ -1,41 +1,40 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import menuIcon from '../../images/menu.svg';
-import './styles.css';
+import { Link, useLocation } from 'react-router-dom';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { pageLinks } from '../../data';
+import './nav.css';
 
 function Nav() {
-  const [opened, setOpened] = useState(false);
-  const openMenu = () => {
-    if (!opened) {
-      setOpened(true);
-    } else {
-      setOpened(false);
-    }
-  };
+  const { pathname } = useLocation();
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
   return (
-    <nav className="main-nav">
-      <button className="toggle-menu-btn" onClick={openMenu}>
-        <img src={menuIcon} className="icon" alt="toggle menu icon" />
+    <nav className="nav-bar">
+      <button
+        className="nav-bar-hamburger"
+        aria-label="Onclick"
+        onClick={() => setIsNavExpanded(!isNavExpanded)}
+      >
+        {isNavExpanded ? (
+          <FontAwesomeIcon icon={faXmark} size="2x" className="icon" />
+        ) : (
+          <FontAwesomeIcon icon={faBars} size="2x" className="icon" />
+        )}
       </button>
-      <ul className={opened ? 'open' : undefined}>
-        <li>
-          <Link to="/">home</Link>
-        </li>
-        <li>
-          <Link to="/about">about</Link>
-        </li>
-        <li>
-          <Link to="/menu">menu</Link>
-        </li>
-        <li>
-          <Link to="/bookings">reservations</Link>
-        </li>
-        <li>
-          <Link to="/order">order online</Link>
-        </li>
-        <li>
-          <Link to="/login">login</Link>
-        </li>
+      <ul
+        className={isNavExpanded ? 'list expanded' : 'list'}
+        onClick={() => setIsNavExpanded(!isNavExpanded)}
+      >
+        {pageLinks.map((page, index) => (
+          <li key={index}>
+            <Link
+              to={page.path}
+              className={pathname === page.path ? 'nav-link current' : 'nav-link'}
+            >
+              {page.name}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

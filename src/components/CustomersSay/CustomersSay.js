@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import './customersSay.css';
 import { clients } from '../../data';
 import Card from './Card';
 
@@ -9,7 +9,7 @@ function CustomersSay() {
       <div className="content max-width">
         <header className="header">
           <h2 className="title">testimonials</h2>
-          <h3 className="sub-title">Read what others have to say about us</h3>
+          <h3 className="sub-title">Read what others have to say about us!</h3>
         </header>
         <div className="cards">
           {clients.map((client) => {

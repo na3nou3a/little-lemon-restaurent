@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import './confirmedBooking.css';
 
 function ConfirmedBooking({ formState }) {
   const { date, time, numOfGuests, occasion, instructions, name, email, phone } = formState;

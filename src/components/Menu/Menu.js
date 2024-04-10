@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import './menu.css';
 import { DishCard } from '../../components';
 import { dishes } from '../../data';
 

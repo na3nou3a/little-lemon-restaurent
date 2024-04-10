@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './styles.css';
+import './specials.css';
 import { specialDishes } from '../../data';
 import { DishCard } from '..';
 

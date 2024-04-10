@@ -1,37 +1,26 @@
 .hero-section {
-  padding: 1rem;
   background-color: #495e57;
 }
 
 .hero-section .content {
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch; /*important*/
   gap: 8px;
 }
 
 .hero-section .info {
-  width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .hero-section .title {
   color: #f4ce14;
-  font-size: 42px;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  text-transform: capitalize;
   letter-spacing: 2px;
 }
 
 .hero-section .sub-title {
-  font-size: 32px;
-  font-weight: 500;
   color: #fff;
-  margin-bottom: 1rem;
 }
 
 .hero-section .text {
@@ -42,34 +31,29 @@
 /* call to action btn */
 .hero-section .link-btn:link,
 .hero-section .link-btn:visited {
-  font-weight: 600;
-  margin-top: 2rem;
+  margin-top: auto;
 }
 
 .hero-section .img {
-  width: 50%;
+  align-self: flex-start;
   min-width: 110px;
-  max-width: 600px;
-  max-height: 400px;
+  max-width: 50%;
+  max-height: 500px;
   object-fit: cover;
-  margin-bottom: -70px;
-  z-index: 100;
+  margin-top: 1rem;
   border-radius: 16px;
 }
 
 /* RESPONSIVNESS */
-
-@media (min-width: 768px) {
-  .hero-section {
-    padding: 4rem 1rem 1rem;
+@media (min-width: 576px) {
+  .hero-section .content {
     max-height: 480px;
   }
 
-  .hero-section .title {
-    font-size: 64px;
-  }
-
-  .hero-section .sub-title {
-    font-size: 38px;
+  .hero-section .img {
+    margin-bottom: -130px;
   }
 }
+
+/* @media (min-width: 768px) {
+} */

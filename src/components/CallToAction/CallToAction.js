@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import foodImg from '../../images/restaurantfood.jpg';
-import './styles.css';
+import './callToAction.css';
 
 function HeroSection() {
   return (
     <section className="hero-section">
       <div className="content max-width">
         <div className="info">
-          <h1 className="title">little lemon</h1>
-          <h2 className="sub-title">chicago</h2>
+          <header className="header">
+            <h1 className="title">little lemon</h1>
+            <h2 className="sub-title">chicago</h2>
+          </header>
           <p className="text">
             We are a family owned Mediterranean restaurant, focused on traditional recipes served
             with a modern twist.
