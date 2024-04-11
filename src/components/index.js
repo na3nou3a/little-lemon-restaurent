@@ -12,6 +12,7 @@ import BookingSection from './BookingSection';
 import BookingForm from './BookingForm';
 import ErrorMessage from './ErrorMessage';
 import ConfirmedBooking from './ConfirmedBooking';
+import ScrollToTop from './ScrollToTop';
 
 export {
   Header,
@@ -28,4 +29,5 @@ export {
   BookingForm,
   ErrorMessage,
   ConfirmedBooking,
+  ScrollToTop,
 };

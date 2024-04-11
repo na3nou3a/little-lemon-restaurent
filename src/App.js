@@ -1,5 +1,5 @@
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import { Header, Nav, Footer } from './components';
+import { Header, Nav, Footer, ScrollToTop } from './components';
 import {
   HomePage,
   AboutPage,
@@ -62,6 +62,7 @@ function App() {
   };
   return (
     <>
+      <ScrollToTop />
       <div className="page-wrapper">
         <div className="top-wrapper max-width">
           <Header />

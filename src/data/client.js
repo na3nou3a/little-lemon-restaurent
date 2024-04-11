@@ -9,7 +9,7 @@ const clients = [
     name: 'gina',
     rating: [1, 1, 1, 1, 0],
     review:
-      'The restaurant has a great variety of dishes and all the ones I tried were excellent. In addition, the price is fair and the service is very attentive. I will definitely recommend it to my friends.',
+      'This restaurant is amazing! the stuff are very nice and warm people, the food delishes!',
     img: gina,
   },
   {
@@ -41,7 +41,7 @@ const clients = [
     name: 'lisa',
     rating: [1, 1, 0.5, 0, 0],
     review:
-      'The restaurant has a great variety of dishes and all the ones I tried were excellent. In addition, the price is fair and the service is very attentive. I will definitely recommend it to my friends.',
+      'Ordered the salad and pasta Margarita, best pasta in the whole country!',
     img: gina,
   },
   {
