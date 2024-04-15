@@ -1,5 +1,6 @@
 .main-header {
   max-width: 240px;
+  width: min(50%, 220px);
 }
 
 .main-header .logo {
@@ -14,6 +15,12 @@
 
 @media (min-width: 768px) {
   .main-header {
-    max-width: 180px;
+    max-width: 160px;
+  }
+}
+
+@media (min-width: 992px) {
+  .main-header {
+    max-width: 220px;
   }
 }

@@ -143,12 +143,11 @@ table {
   padding: 0;
 }
 body {
-  font-family: Karla, sans-serif;
+  font-family: 'Karla', sans-serif;
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.5;
-  color: #000;
+  color: #222;
 }
 
 a {
@@ -157,7 +156,7 @@ a {
   color: inherit;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.4s linear;
+  transition: all 0.3s linear;
   text-transform: capitalize;
 }
 
@@ -169,7 +168,6 @@ h1,
 h2,
 h3,
 h4 {
-  line-height: 1;
   font-family: 'Markazi Text';
   font-weight: 500;
   text-transform: capitalize;
@@ -186,4 +184,8 @@ h2 {
 
 h2 {
   font-size: 1.5rem;
+}
+
+p {
+  line-height: 1.5;
 }

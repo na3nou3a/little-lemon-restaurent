@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faXmark, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { pageLinks } from '../../data';
 import { removeStoredClient } from '../../utils/storage';
@@ -26,6 +26,13 @@ function Nav({ client }) {
 
   return (
     <nav className="nav-bar">
+      <Link
+        to="/order"
+        className={pathname === '/order' ? 'nav-link for-mobile current' : 'nav-link for-mobile'}
+      >
+        <FontAwesomeIcon icon={faCartShopping} className="shopping-cart" />
+        <span className="counter">0</span>
+      </Link>
       <button
         className="nav-bar-hamburger"
         aria-label="Onclick"
@@ -43,7 +50,21 @@ function Nav({ client }) {
       >
         {filteredLinks.map((page, index) => {
           const { path, name } = page;
-          if (path === '/logout') {
+          if (path === '/order') {
+            return (
+              <li key={index}>
+                <Link
+                  to={path}
+                  className={
+                    pathname === path ? 'nav-link order-link current' : 'nav-link order-link'
+                  }
+                >
+                  {name}
+                  <span className="counter">0</span>
+                </Link>
+              </li>
+            );
+          } else if (path === '/logout') {
             return (
               <li key={index}>
                 <Link

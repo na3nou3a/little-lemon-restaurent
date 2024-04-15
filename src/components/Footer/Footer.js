@@ -38,6 +38,12 @@ function Footer({ client }) {
                     </Link>
                   </li>
                 );
+              } else if (path === '/order') {
+                return (
+                  <li key={index}>
+                    <Link to={path}>orders</Link>
+                  </li>
+                );
               } else {
                 return (
                   <li key={index}>
