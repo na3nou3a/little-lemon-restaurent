@@ -3,7 +3,7 @@ import jake from '../images/jake.jpeg';
 import rosa from '../images/rosa.jpeg';
 import raymond from '../images/raymond.jpeg';
 
-const clients = [
+const testimonials = [
   {
     id: 1,
     name: 'gina',
@@ -40,8 +40,7 @@ const clients = [
     id: 5,
     name: 'lisa',
     rating: [1, 1, 0.5, 0, 0],
-    review:
-      'Ordered the salad and pasta Margarita, best pasta in the whole country!',
+    review: 'Ordered the salad and pasta Margarita, best pasta in the whole country!',
     img: gina,
   },
   {
@@ -70,4 +69,4 @@ const clients = [
   },
 ];
 
-export default clients;
+export default testimonials;

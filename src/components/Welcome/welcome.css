@@ -1,0 +1,17 @@
+.welcome-section .text {
+  font-size: 1.15rem;
+  padding: 1rem 0;
+  color: #444;
+  text-transform: capitalize;
+}
+
+.welcome-section .text a {
+  font-size: inherit;
+  color: blue;
+}
+
+.welcome-section .text a:hover,
+.welcome-section .text a:active,
+.welcome-section .text a:focus {
+  text-decoration: underline;
+}

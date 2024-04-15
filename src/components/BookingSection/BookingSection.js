@@ -1,8 +1,11 @@
 import React from 'react';
 import './bookingSection.css';
-import { BookingForm } from '../../components';
+import { BookingForm, NotAllowed } from '../../components';
 
 function BookingSection(props) {
+  if (!props.client) {
+    return <NotAllowed />;
+  }
   return (
     <section className="booking-section">
       <div className="content max-width">

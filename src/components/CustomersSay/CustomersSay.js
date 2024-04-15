@@ -1,6 +1,6 @@
 import React from 'react';
 import './customersSay.css';
-import { clients } from '../../data';
+import { testimonials } from '../../data';
 import Card from './Card';
 
 function CustomersSay() {
@@ -12,8 +12,8 @@ function CustomersSay() {
           <h3 className="sub-title">Read what others have to say about us!</h3>
         </header>
         <div className="cards">
-          {clients.map((client) => {
-            return <Card key={client.id} client={client} />;
+          {testimonials.map((testimonial) => {
+            return <Card key={testimonial.id} testimonial={testimonial} />;
           })}
         </div>
       </div>

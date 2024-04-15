@@ -2,8 +2,8 @@ import React from 'react';
 import { faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Card({ client }) {
-  const { name, rating, review, img } = client;
+function Card({ testimonial }) {
+  const { name, rating, review, img } = testimonial;
   const ratingLevels = { 0: faStar, 0.5: faStarHalfStroke, 1: faStar };
   return (
     <article className="card">

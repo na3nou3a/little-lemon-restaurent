@@ -6,15 +6,22 @@ import {
   BookingPage,
   MenuPage,
   OrderOnlinePage,
+  SignUpPage,
   LoginPage,
+  LogOutPage,
+  WelcomePage,
+  ProfilePage,
   ConfirmBookingPage,
+  NotFoundPage,
 } from './pages';
 import './App.css';
 import { useState, useReducer } from 'react';
 import { initializeTimes, updateTimes } from './utils/times';
 import { submitAPI } from './utils/API';
+import { getStoredClient } from './utils/storage';
 
 function App() {
+  const [client, setClient] = useState(getStoredClient() || false);
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
   const minDate = new Date().toISOString().split('T')[0];
   const initialValues = {
@@ -40,6 +47,7 @@ function App() {
   const [isDisabled, setIsDisabled] = useState(true);
 
   const navigate = useNavigate();
+
   const submitForm = (e) => {
     e.preventDefault();
     if (submitAPI(formState)) {
@@ -48,6 +56,7 @@ function App() {
   };
 
   const bookingPageProps = {
+    client,
     formState,
     setFormState,
     availableTimes,
@@ -66,7 +75,7 @@ function App() {
       <div className="page-wrapper">
         <div className="top-wrapper max-width">
           <Header />
-          <Nav />
+          <Nav client={client} />
         </div>
         <Routes>
           <Route element={<HomePage />} path="/" />
@@ -75,9 +84,14 @@ function App() {
           <Route element={<ConfirmBookingPage formState={formState} />} path="/confirm-bookings" />
           <Route element={<MenuPage />} path="/menu" />
           <Route element={<OrderOnlinePage />} path="/order" />
-          <Route element={<LoginPage />} path="/login" />
+          <Route element={<SignUpPage setClient={setClient} />} path="/signup" />
+          <Route element={<LoginPage setClient={setClient} />} path="/login" />
+          <Route element={<WelcomePage client={client} />} path="/welcome" />
+          <Route element={<ProfilePage client={client} />} path="/profile" />
+          <Route element={<LogOutPage />} path="/logout" />
+          <Route element={<NotFoundPage />} path="*" />
         </Routes>
-        <Footer />
+        <Footer client={client} />
       </div>
     </>
   );

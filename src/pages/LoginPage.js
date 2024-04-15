@@ -1,7 +1,12 @@
 import React from 'react';
+import { Main, LoginSection } from '../components';
 
-const LoginPage = () => {
-  return <p>login form</p>;
+const LoginPage = (props) => {
+  return (
+    <Main>
+      <LoginSection {...props} />
+    </Main>
+  );
 };
 
 export default LoginPage;

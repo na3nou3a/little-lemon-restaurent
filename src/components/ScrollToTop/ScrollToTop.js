@@ -21,7 +21,7 @@ function ScrollToTop() {
       behavior: 'smooth',
     });
   };
-  return <>{showTopBtn && <FaAngleUp className="scroll-icon" onClick={goToTop} />};</>;
+  return <>{showTopBtn && <FaAngleUp className="scroll-icon" onClick={goToTop} />}</>;
 }
 
 export default ScrollToTop;

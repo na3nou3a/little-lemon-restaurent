@@ -16,12 +16,6 @@
   margin: 0 auto;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
 .top-wrapper,
 .main,
 .footer {

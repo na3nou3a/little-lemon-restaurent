@@ -1,0 +1,17 @@
+.not-allowed-section .text {
+  font-size: 1.15rem;
+  padding: 1rem 0;
+  color: #444;
+  text-transform: capitalize;
+}
+
+.not-allowed-section .text a {
+  font-size: inherit;
+  color: blue;
+}
+
+.not-allowed-section .text a:hover,
+.not-allowed-section .text a:active,
+.not-allowed-section .text a:focus {
+  text-decoration: underline;
+}

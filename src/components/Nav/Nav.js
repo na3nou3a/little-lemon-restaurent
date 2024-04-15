@@ -1,13 +1,29 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { pageLinks } from '../../data';
+import { removeStoredClient } from '../../utils/storage';
 import './nav.css';
 
-function Nav() {
+function Nav({ client }) {
   const { pathname } = useLocation();
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+  let filteredLinks;
+  if (client) {
+    filteredLinks = pageLinks.filter((link) => link.name !== 'sign up' && link.name !== 'login');
+  } else {
+    filteredLinks = pageLinks.filter((link) => link.name !== 'logout' && link.name !== 'profile');
+  }
+  const navigate = useNavigate();
+  const logout = () => {
+    removeStoredClient();
+    setTimeout(() => {
+      navigate('/logout');
+      window.location.reload();
+    }, 500);
+  };
+
   return (
     <nav className="nav-bar">
       <button
@@ -25,16 +41,30 @@ function Nav() {
         className={isNavExpanded ? 'list expanded' : 'list'}
         onClick={() => setIsNavExpanded(!isNavExpanded)}
       >
-        {pageLinks.map((page, index) => (
-          <li key={index}>
-            <Link
-              to={page.path}
-              className={pathname === page.path ? 'nav-link current' : 'nav-link'}
-            >
-              {page.name}
-            </Link>
-          </li>
-        ))}
+        {filteredLinks.map((page, index) => {
+          const { path, name } = page;
+          if (path === '/logout') {
+            return (
+              <li key={index}>
+                <Link
+                  to={path}
+                  className={pathname === path ? 'nav-link current' : 'nav-link'}
+                  onClick={logout}
+                >
+                  {name}
+                </Link>
+              </li>
+            );
+          } else {
+            return (
+              <li key={index}>
+                <Link to={path} className={pathname === path ? 'nav-link current' : 'nav-link'}>
+                  {name}
+                </Link>
+              </li>
+            );
+          }
+        })}
       </ul>
     </nav>
   );

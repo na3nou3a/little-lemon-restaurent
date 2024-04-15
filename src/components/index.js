@@ -10,9 +10,17 @@ import Menu from './Menu';
 import DishCard from './DishCard';
 import BookingSection from './BookingSection';
 import BookingForm from './BookingForm';
-import ErrorMessage from './ErrorMessage';
+import { LoginErrorMessage, ErrorMessage } from './ErrorMessage';
 import ConfirmedBooking from './ConfirmedBooking';
 import ScrollToTop from './ScrollToTop';
+import LoginSection from './LoginSection';
+import LogOutSection from './LogOutSection';
+import LoginForm from './LoginForm';
+import SignUpSection from './SignUpSection';
+import SignUpForm from './SignUpForm';
+import Welcome from './Welcome';
+import ProfileSection from './ProfileSection';
+import NotAllowed from './NotAllowed';
 
 export {
   Header,
@@ -28,6 +36,15 @@ export {
   BookingSection,
   BookingForm,
   ErrorMessage,
+  LoginErrorMessage,
   ConfirmedBooking,
   ScrollToTop,
+  LoginSection,
+  LogOutSection,
+  LoginForm,
+  SignUpSection,
+  SignUpForm,
+  Welcome,
+  ProfileSection,
+  NotAllowed,
 };

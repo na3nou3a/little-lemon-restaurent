@@ -1,10 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from '../../images/smallLogo.png';
 import './footer.css';
 import { pageLinks, contactInfo, socialMedia } from '../../data';
-function Footer() {
+import { removeStoredClient } from '../../utils/storage';
+
+function Footer({ client }) {
+  let filteredLinks;
+  if (client) {
+    filteredLinks = pageLinks.filter((link) => link.name !== 'sign up' && link.name !== 'login');
+  } else {
+    filteredLinks = pageLinks.filter((link) => link.name !== 'logout' && link.name !== 'profile');
+  }
+  const navigate = useNavigate();
+  const logout = () => {
+    removeStoredClient();
+    setTimeout(() => {
+      navigate('/logout');
+      window.location.reload();
+    }, 500);
+  };
   return (
     <footer className="footer section">
       <div className="content max-width">
@@ -12,11 +28,24 @@ function Footer() {
         <nav className="site-map">
           <h3>siteMap</h3>
           <ul>
-            {pageLinks.map((page, index) => (
-              <li key={index}>
-                <Link to={page.path}>{page.name}</Link>
-              </li>
-            ))}
+            {filteredLinks.map((page, index) => {
+              const { path, name } = page;
+              if (path === '/logout') {
+                return (
+                  <li key={index}>
+                    <Link to={path} onClick={logout}>
+                      {name}
+                    </Link>
+                  </li>
+                );
+              } else {
+                return (
+                  <li key={index}>
+                    <Link to={path}>{name}</Link>
+                  </li>
+                );
+              }
+            })}
           </ul>
         </nav>
         <div className="contact">

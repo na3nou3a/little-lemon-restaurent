@@ -12,6 +12,7 @@ import {
 import { ErrorMessage } from '../../components';
 
 function BookingForm({
+  client,
   formState,
   setFormState,
   availableTimes,

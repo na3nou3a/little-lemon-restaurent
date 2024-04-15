@@ -13,6 +13,27 @@ function isFormValid(formState) {
   return false;
 }
 
+function isSignUpFormValid(formState) {
+  const { name, email, password, confirmPassword } = formState;
+  if (
+    isValidName(name) &&
+    isValidEmail(email) &&
+    isValidPassword(password) &&
+    isValidConfirmPassword(confirmPassword, password)
+  ) {
+    return true;
+  }
+  return false;
+}
+
+function isLoginFormValid(formState) {
+  const { name, email, password } = formState;
+  if (isValidName(name) && isValidEmail(email) && isValidPassword(password)) {
+    return true;
+  }
+  return false;
+}
+
 function validateEmail(email, formErrors, setFormErrors) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
   if (!email) {
@@ -111,18 +132,60 @@ function isValidPhone(phone) {
   return true;
 }
 
+function validatePassword(password, formErrors, setFormErrors) {
+  if (!password) {
+    setFormErrors({ ...formErrors, password: 'password must not be empty!' });
+  } else if (password.length < 6) {
+    setFormErrors({ ...formErrors, password: 'no less than 6 characters' });
+  } else {
+    setFormErrors({ ...formErrors, password: '' });
+  }
+}
+
+function isValidPassword(password) {
+  if (!password || password.length < 6) {
+    return false;
+  }
+  return true;
+}
+
+function validateConfirmPassword(newPassword, password, formErrors, setFormErrors) {
+  if (!newPassword) {
+    setFormErrors({ ...formErrors, confirmPassword: 'password must not be empty!' });
+  } else if (newPassword.length < 6) {
+    setFormErrors({ ...formErrors, confirmPassword: 'no less than 6 characters' });
+  } else if (newPassword !== password) {
+    setFormErrors({ ...formErrors, confirmPassword: "password doesn't mutch" });
+  } else {
+    setFormErrors({ ...formErrors, confirmPassword: '' });
+  }
+}
+
+function isValidConfirmPassword(newPassword, password) {
+  if (!newPassword || newPassword.length < 6 || newPassword !== password) {
+    return false;
+  }
+  return true;
+}
+
 export {
   isFormValid,
+  isSignUpFormValid,
+  isLoginFormValid,
   validateDate,
   validateTime,
   validateNumOfGuests,
   validateName,
   validateEmail,
   validatePhone,
+  validatePassword,
+  validateConfirmPassword,
   isValidDate,
   isValidTime,
   isValidNumOfGuests,
   isValidName,
   isValidEmail,
   isValidPhone,
+  isValidPassword,
+  isValidConfirmPassword,
 };
