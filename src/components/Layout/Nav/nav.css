@@ -6,25 +6,40 @@
   margin-left: 1rem;
 }
 
-.nav-bar-hamburger {
+.open-close-btn {
   width: 3rem;
   cursor: pointer;
   border: none;
   outline: none;
-  border-radius: 4px;
+  border-radius: 2px;
   overflow: hidden;
-  transition: all 0.4s linear;
-  background-color: #fff;
-}
-
-.nav-bar-hamburger:hover,
-.nav-bar-hamburger:focus {
-  background-color: #f4ce14;
-}
-
-.nav-bar-hamburger .icon {
-  font-size: 2.5rem;
+  transition: all 0.6s linear;
+  background-color: transparent;
   color: #495e57;
+}
+
+.open-close-btn:hover,
+.open-close-btn:focus {
+  background-color: #495e57;
+  color: #fff;
+}
+
+.list .open-close-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #495e57;
+  color: #fff;
+}
+
+.list .open-close-btn:hover,
+.open-close-btn:focus {
+  color: #333;
+  background-color: transparent;
+}
+
+.open-close-btn .icon {
+  font-size: 2.5rem;
 }
 
 .nav-bar .list {
@@ -32,104 +47,102 @@
   flex-direction: column;
   position: absolute;
   top: 0;
-  right: 0;
-  left: -50%;
-  bottom: 0;
+  right: -50%;
   width: 50%;
   z-index: 100;
   background-color: #fff;
-  transition: left 0.5s linear;
+  transition: right 0.5s linear;
 }
 
 .nav-bar .list.expanded {
-  left: 0;
+  right: 0;
   min-width: 250px;
-  box-shadow: 6px 0 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
 }
 
 .nav-link {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 20px 0 20px 16px;
   font-family: 'Karla', sans-serif;
   color: #495e57;
   text-transform: uppercase;
   letter-spacing: 1px;
+  transition: all 0.3s linear;
+}
+
+.nav-icon {
+  font-size: 1.5rem;
+  padding-right: 1rem;
+}
+
+.nav-link.for-mobile .nav-icon,
+.nav-link.order-link .nav-icon {
+  padding-right: 0;
+  font-size: 2rem;
 }
 
 /* .nav-link:link,
 .nav-link:visited {
 } */
 
-.nav-link:hover,
-.nav-link:active,
-.nav-link:focus {
-  background-color: #f4ce14;
-}
-
-.nav-link.current {
-  background-color: #f4ce14;
-  font-weight: 600;
-}
-
 .nav-link.order-link {
   display: none;
 }
 
-.nav-link.for-mobile {
-  padding: 8px 8px 8px 8px;
-  border-radius: 8px;
+.nav-link.for-mobile,
+.nav-link.order-link {
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 50%;
   text-align: center;
+  border: 2px solid #495e57;
 }
 
-.nav-link.order-link,
-.nav-link.for-mobile {
-  position: relative;
+.nav-link:hover,
+.nav-link:active,
+.nav-link:focus {
+  background-color: #495e57;
+  color: #fff;
+}
+
+.nav-link.current {
+  background-color: #495e57;
+  color: #fff;
+  font-weight: 600;
+}
+
+.nav-link.current .nav-icon {
+  color: #f4ce14;
 }
 
 .counter {
   position: absolute;
   top: 10%;
   left: 45%;
-  color: #b93737;
-  background-color: #edefee;
-  font-size: 1rem;
-  padding: 4px;
+  color: #ff0000;
+  font-size: 1.15rem;
   line-height: 1;
   font-weight: 700;
-  border-radius: 50%;
 }
 
-.shopping-cart {
-  color: #495e57;
-  font-size: 2.85rem;
-}
+/*========== MEDIA QUERY ==========*/
 
-/* .nav-link.for-mobile .shopping-cart {
-  color: #495e57;
-  font-size: 2.85rem;
-} */
-
-/* RESPONSIVNESS */
-/*
-@media (min-width: 576px) {
-} */
-
-@media (min-width: 768px) {
+@media (min-width: 650px) {
   .nav-bar {
     width: fit-content;
     margin-left: 0;
   }
 
-  .nav-bar-hamburger {
+  .open-close-btn,
+  .nav-link.for-mobile,
+  .link-name {
     display: none;
   }
 
   .nav-link.order-link {
     display: block;
-  }
-
-  .nav-link.for-mobile {
-    display: none;
   }
 
   .nav-bar .list,
@@ -148,28 +161,38 @@
     margin-right: 4px;
   }
 
-  .nav-bar li:last-child {
-    margin-right: 0;
+  .nav-link {
+    letter-spacing: unset;
+    padding: 6px 12px;
+    border-radius: 1px;
   }
 
-  .nav-link {
-    /* font-size: 14px; */
-    letter-spacing: unset;
-    padding: 8px;
-    border-radius: 4px;
+  .nav-link.current {
+    color: #f4ce14;
+    background-color: #495e57;
+  }
+
+  .nav-icon {
+    font-size: 1.75rem;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-bar li {
+    margin-right: 0.5rem;
   }
 }
 
 @media (min-width: 992px) {
   .nav-link {
-    padding: 8px 12px;
+    flex-direction: column;
+    font-size: 14px;
   }
 
-  .nav-bar li {
-    margin-right: 8px;
-  }
-
-  .nav-bar li:last-child {
-    margin-right: 0;
+  .link-name {
+    display: block;
+    color: inherit;
+    padding-top: 8px;
   }
 }

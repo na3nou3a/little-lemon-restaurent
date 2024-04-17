@@ -66,12 +66,12 @@ function Footer({ client }) {
           </ul>
         </div>
         <nav className="social-media">
-          <h3>Connect with us</h3>
+          <h3>find us on</h3>
           <ul>
             {socialMedia.map((link, index) => (
               <li key={index}>
                 <a href={link.value} target="_blank" rel="noreferrer" title={link.name}>
-                  <FontAwesomeIcon icon={link.icon} size="lg" />
+                  <FontAwesomeIcon icon={link.icon} title={link.name} size="lg" />
                 </a>
               </li>
             ))}

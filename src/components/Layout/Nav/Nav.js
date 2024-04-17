@@ -11,10 +11,15 @@ function Nav({ client }) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   let filteredLinks;
   if (client) {
-    filteredLinks = pageLinks.filter((link) => link.name !== 'sign up' && link.name !== 'login');
+    filteredLinks = pageLinks.filter(
+      (link) => link.name !== 'sign up' && link.name !== 'login' && link.name !== 'orders'
+    );
   } else {
-    filteredLinks = pageLinks.filter((link) => link.name !== 'logout' && link.name !== 'profile');
+    filteredLinks = pageLinks.filter(
+      (link) => link.name !== 'logout' && link.name !== 'profile' && link.name !== 'orders'
+    );
   }
+  let orderLink = pageLinks.find((link) => link.name === 'orders');
   const navigate = useNavigate();
   const logout = () => {
     removeStoredClient();
@@ -25,69 +30,81 @@ function Nav({ client }) {
   };
 
   return (
-    <nav className="nav-bar">
+    <>
+      <nav className="nav-bar">
+        <Link
+          to="/order"
+          className={pathname === '/order' ? 'nav-link for-mobile current' : 'nav-link for-mobile'}
+          title="orders"
+        >
+          <FontAwesomeIcon icon={faCartShopping} className="nav-icon" />
+          <span className="counter">0</span>
+        </Link>
+        <button
+          className="open-close-btn"
+          aria-label="Onclick"
+          onClick={() => setIsNavExpanded(!isNavExpanded)}
+          title="open"
+        >
+          <FontAwesomeIcon icon={faBars} size="2x" className="icon" />
+        </button>
+
+        <ul
+          className={isNavExpanded ? 'list expanded' : 'list'}
+          onClick={() => setIsNavExpanded(false)}
+        >
+          <button
+            className="open-close-btn"
+            aria-label="Onclick"
+            onClick={() => setIsNavExpanded(false)}
+            title="close"
+          >
+            <FontAwesomeIcon icon={faXmark} size="2x" className="icon" />
+          </button>
+          {filteredLinks.map((page, index) => {
+            const { path, name, icon } = page;
+            if (path === '/logout') {
+              return (
+                <li key={index}>
+                  <Link
+                    to={path}
+                    className={pathname === path ? 'nav-link current' : 'nav-link'}
+                    onClick={logout}
+                    title={name}
+                  >
+                    <FontAwesomeIcon icon={icon} className="nav-icon" />
+                    <span className="link-name">{name}</span>
+                  </Link>
+                </li>
+              );
+            } else {
+              return (
+                <li key={index}>
+                  <Link
+                    to={path}
+                    className={pathname === path ? 'nav-link current' : 'nav-link'}
+                    title={name}
+                  >
+                    <FontAwesomeIcon icon={icon} className="nav-icon" />
+                    <span className="link-name">{name}</span>
+                  </Link>
+                </li>
+              );
+            }
+          })}
+        </ul>
+      </nav>
       <Link
-        to="/order"
-        className={pathname === '/order' ? 'nav-link for-mobile current' : 'nav-link for-mobile'}
+        to={orderLink.path}
+        className={
+          pathname === orderLink.path ? 'nav-link order-link current' : 'nav-link order-link'
+        }
       >
-        <FontAwesomeIcon icon={faCartShopping} className="shopping-cart" />
+        <FontAwesomeIcon icon={orderLink.icon} className="nav-icon" />
+
         <span className="counter">0</span>
       </Link>
-      <button
-        className="nav-bar-hamburger"
-        aria-label="Onclick"
-        onClick={() => setIsNavExpanded(!isNavExpanded)}
-      >
-        {isNavExpanded ? (
-          <FontAwesomeIcon icon={faXmark} size="2x" className="icon" />
-        ) : (
-          <FontAwesomeIcon icon={faBars} size="2x" className="icon" />
-        )}
-      </button>
-      <ul
-        className={isNavExpanded ? 'list expanded' : 'list'}
-        onClick={() => setIsNavExpanded(!isNavExpanded)}
-      >
-        {filteredLinks.map((page, index) => {
-          const { path, name } = page;
-          if (path === '/order') {
-            return (
-              <li key={index}>
-                <Link
-                  to={path}
-                  className={
-                    pathname === path ? 'nav-link order-link current' : 'nav-link order-link'
-                  }
-                >
-                  {name}
-                  <span className="counter">0</span>
-                </Link>
-              </li>
-            );
-          } else if (path === '/logout') {
-            return (
-              <li key={index}>
-                <Link
-                  to={path}
-                  className={pathname === path ? 'nav-link current' : 'nav-link'}
-                  onClick={logout}
-                >
-                  {name}
-                </Link>
-              </li>
-            );
-          } else {
-            return (
-              <li key={index}>
-                <Link to={path} className={pathname === path ? 'nav-link current' : 'nav-link'}>
-                  {name}
-                </Link>
-              </li>
-            );
-          }
-        })}
-      </ul>
-    </nav>
+    </>
   );
 }
 

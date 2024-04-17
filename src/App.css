@@ -27,6 +27,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #495e57;
 }
 
 main,
@@ -37,6 +38,7 @@ main,
 .footer {
   height: fit-content;
   margin-top: auto;
+  border-top: 1px solid #495e57;
 }
 
 /* call to action btn */

@@ -1,16 +1,25 @@
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-const cart = <FontAwesomeIcon icon={faCartShopping} className="shopping-cart" />;
+import {
+  faCartShopping,
+  faHome,
+  faGlobe,
+  faUtensils,
+  faBook,
+  faUser,
+  faUserPlus,
+  faUserCircle,
+  faRightFromBracket,
+} from '@fortawesome/free-solid-svg-icons';
+
 const pageLinks = [
-  { name: 'home', path: '/' },
-  { name: 'about', path: '/about' },
-  { name: 'menu', path: '/menu' },
-  { name: 'reservations', path: '/bookings' },
-  { name: cart, path: '/order' },
-  { name: 'login', path: '/login' },
-  { name: 'sign up', path: '/signup' },
-  { name: 'profile', path: '/profile' },
-  { name: 'logout', path: '/logout' },
+  { name: 'home', path: '/', icon: faHome },
+  { name: 'about', path: '/about', icon: faGlobe },
+  { name: 'menu', path: '/menu', icon: faUtensils },
+  { name: 'reservations', path: '/bookings', icon: faBook },
+  { name: 'login', path: '/login', icon: faUser },
+  { name: 'sign up', path: '/signup', icon: faUserPlus },
+  { name: 'profile', path: '/profile', icon: faUserCircle },
+  { name: 'logout', path: '/logout', icon: faRightFromBracket },
+  { name: 'orders', path: '/order', icon: faCartShopping },
 ];
 
 export default pageLinks;
