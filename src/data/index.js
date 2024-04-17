@@ -1,9 +1,7 @@
-import testimonials from './testimonials';
-import specialDishes from './specialDishes';
-import dishes from './menuDishes';
-import pageLinks from './pageLinks';
-import contactInfo from './contact';
-import socialMedia from './socialMedia';
-import clients from './clients';
-
-export { testimonials, specialDishes, dishes, pageLinks, contactInfo, socialMedia, clients };
+export { default as testimonials } from './testimonials';
+export { default as specialDishes } from './specialDishes';
+export { default as dishes } from './menuDishes';
+export { default as pageLinks } from './pageLinks';
+export { default as contactInfo } from './contact';
+export { default as socialMedia } from './socialMedia';
+export { default as clients } from './clients';

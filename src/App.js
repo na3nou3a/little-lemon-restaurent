@@ -1,6 +1,10 @@
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import { Header, Nav, Footer, ScrollToTop } from './components';
+import { useState, useReducer } from 'react';
 import {
+  Header,
+  Nav,
+  Footer,
+  ScrollToTop,
   HomePage,
   AboutPage,
   BookingPage,
@@ -13,12 +17,10 @@ import {
   ProfilePage,
   ConfirmBookingPage,
   NotFoundPage,
-} from './pages';
+} from './components';
+import { initializeTimes, updateTimes, getStoredClient } from './utils';
+import { submitAPI } from './APIS';
 import './App.css';
-import { useState, useReducer } from 'react';
-import { initializeTimes, updateTimes } from './utils/times';
-import { submitAPI } from './utils/API';
-import { getStoredClient } from './utils/storage';
 
 function App() {
   const [client, setClient] = useState(getStoredClient() || false);
@@ -77,20 +79,25 @@ function App() {
           <Header />
           <Nav client={client} />
         </div>
-        <Routes>
-          <Route element={<HomePage />} path="/" />
-          <Route element={<AboutPage />} path="/about" />
-          <Route element={<BookingPage {...bookingPageProps} />} path="/bookings" />
-          <Route element={<ConfirmBookingPage formState={formState} />} path="/confirm-bookings" />
-          <Route element={<MenuPage />} path="/menu" />
-          <Route element={<OrderOnlinePage />} path="/order" />
-          <Route element={<SignUpPage setClient={setClient} />} path="/signup" />
-          <Route element={<LoginPage setClient={setClient} />} path="/login" />
-          <Route element={<WelcomePage client={client} />} path="/welcome" />
-          <Route element={<ProfilePage client={client} />} path="/profile" />
-          <Route element={<LogOutPage />} path="/logout" />
-          <Route element={<NotFoundPage />} path="*" />
-        </Routes>
+        <main>
+          <Routes>
+            <Route element={<HomePage />} path="/" />
+            <Route element={<AboutPage />} path="/about" />
+            <Route element={<BookingPage {...bookingPageProps} />} path="/bookings" />
+            <Route
+              element={<ConfirmBookingPage formState={formState} />}
+              path="/confirm-bookings"
+            />
+            <Route element={<MenuPage />} path="/menu" />
+            <Route element={<OrderOnlinePage />} path="/order" />
+            <Route element={<SignUpPage setClient={setClient} />} path="/signup" />
+            <Route element={<LoginPage setClient={setClient} />} path="/login" />
+            <Route element={<WelcomePage client={client} />} path="/welcome" />
+            <Route element={<ProfilePage client={client} />} path="/profile" />
+            <Route element={<LogOutPage />} path="/logout" />
+            <Route element={<NotFoundPage />} path="*" />
+          </Routes>
+        </main>
         <Footer client={client} />
       </div>
     </>

@@ -1,4 +1,4 @@
-import { fetchAPI } from './API';
+import { fetchAPI } from '../APIS';
 
 const initializeTimes = function () {
   const today = new Date();

@@ -29,6 +29,7 @@
   align-items: center;
 }
 
+main,
 .main {
   height: 100%;
 }
@@ -99,8 +100,115 @@ section header,
   color: red;
   width: fit-content;
 }
+/* ========== FORM ELEMEMTS ========== */
+fieldset {
+  padding: 1rem;
+  border: 1px solid #495e57;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
 
-/* RESPONSIVENESS */
+legend {
+  color: #222;
+  font-size: 1.15rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 0 16px;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.form-control:last-child {
+  margin-bottom: 0;
+}
+
+label {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #495e57;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.required {
+  height: 100%;
+  padding-right: 2px;
+  font-size: 24px;
+  vertical-align: middle;
+  color: red;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  color: #495e57;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s linear;
+}
+
+input,
+select {
+  height: 2.5rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #495e57;
+}
+
+input.input-error,
+select.input-error {
+  border-color: red;
+}
+
+.submit-btn {
+  display: block;
+  padding: 8px 12px;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  line-height: 1;
+  border: 2px solid #495e57;
+  background-color: #495e57;
+  border-radius: 2rem;
+  transition: all 0.4s linear;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: transparent;
+  color: #495e57;
+  border-color: #495e57;
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+/* ========== MEDIA QUIRIES ========== */
 @media (min-width: 576px) {
   .title {
     font-size: 4rem;

@@ -1,0 +1,66 @@
+/* ========== LOGIN SECTION ========== */
+/* .login-section {
+} */
+
+.login-section .wrapper {
+  max-width: 400px;
+  margin: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.login-section .header {
+  max-width: 400px;
+  margin: auto;
+}
+
+.login-section .title {
+  font-size: 2.5rem;
+  padding: 0 1rem;
+  color: #333;
+}
+
+.login-section .text {
+  font-size: 0.9rem;
+  padding: 0 1rem 1rem;
+  color: #444;
+  text-transform: capitalize;
+}
+
+.login-section .text a {
+  font-size: inherit;
+  color: blue;
+}
+
+.login-section .text a:hover,
+.login-section .text a:active,
+.login-section .text a:focus {
+  text-decoration: underline;
+}
+
+/* ========== LOGIN FORM ========== */
+.login-form {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* errors */
+.login-error {
+  padding: 8px;
+  color: #222;
+  font-weight: 500;
+  font-size: 0.85rem;
+  width: 90%;
+  margin: 8px auto;
+  text-transform: capitalize;
+  border: 1px solid rgb(201, 95, 95);
+  background-color: rgb(240, 189, 189);
+  border-radius: 8px;
+}
+
+.login-error .error {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: red;
+}

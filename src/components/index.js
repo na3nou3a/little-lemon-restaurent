@@ -1,50 +1,15 @@
-import Header from './Header';
-import Nav from './Nav';
-import Main from './Main';
-import Footer from './Footer';
-import CallToAction from './CallToAction';
-import Specials from './Specials';
-import CustomersSay from './CustomersSay';
-import Chicago from './Chicago';
-import Menu from './Menu';
-import DishCard from './DishCard';
-import BookingSection from './BookingSection';
-import BookingForm from './BookingForm';
-import { LoginErrorMessage, ErrorMessage } from './ErrorMessage';
-import ConfirmedBooking from './ConfirmedBooking';
-import ScrollToTop from './ScrollToTop';
-import LoginSection from './LoginSection';
-import LogOutSection from './LogOutSection';
-import LoginForm from './LoginForm';
-import SignUpSection from './SignUpSection';
-import SignUpForm from './SignUpForm';
-import Welcome from './Welcome';
-import ProfileSection from './ProfileSection';
-import NotAllowed from './NotAllowed';
-
-export {
-  Header,
-  Nav,
-  Main,
-  Footer,
-  CallToAction,
-  Specials,
-  CustomersSay,
-  Chicago,
-  Menu,
-  DishCard,
-  BookingSection,
-  BookingForm,
-  ErrorMessage,
-  LoginErrorMessage,
-  ConfirmedBooking,
-  ScrollToTop,
-  LoginSection,
-  LogOutSection,
-  LoginForm,
-  SignUpSection,
-  SignUpForm,
-  Welcome,
-  ProfileSection,
-  NotAllowed,
-};
+export { default as HomePage } from './Home/HomePage';
+export { default as MenuPage } from './Menu/MenuPage';
+export { default as AboutPage } from './About/AboutPage';
+export { default as BookingPage } from './Booking/BookingPage';
+export { default as OrderOnlinePage } from './Orders/OrderOnlinePage';
+export { default as SignUpPage } from './SignUp/SignUpPage';
+export { default as LoginPage } from './Login/LoginPage';
+export { default as ProfilePage } from './Profile/ProfilePage';
+export { default as LogOutPage } from './LogOut/LogoutPage';
+export { default as ConfirmBookingPage } from './ConfirmBooking/ConfirmBookingPage';
+export { default as WelcomePage } from './Welcome/WellcomePage';
+export { default as NotAllowedPage } from './NotAllowed/NotAllowedPage';
+export { default as NotFoundPage } from './NotFound/NotFoundPage';
+export { ErrorMsg, LoginErrorMsg } from './SharedComponents';
+export { Header, Nav, Footer, ScrollToTop } from './Layout';
