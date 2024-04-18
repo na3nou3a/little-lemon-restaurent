@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { FaAngleUp } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import './scrollToTop.css';
 
 function ScrollToTop() {
@@ -21,7 +22,11 @@ function ScrollToTop() {
       behavior: 'smooth',
     });
   };
-  return <>{showTopBtn && <FaAngleUp className="scroll-icon" onClick={goToTop} />}</>;
+  return (
+    <>
+      {showTopBtn && <FontAwesomeIcon icon={faAngleUp} className="scroll-icon" onClick={goToTop} />}
+    </>
+  );
 }
 
 export default ScrollToTop;

@@ -6,8 +6,8 @@
   background-color: #495e57;
   border: 2px solid #fff;
   border-radius: 50%;
-  height: 50px;
-  width: 50px;
+  font-size: 34px;
+  padding: 4px;
   color: #fff;
   cursor: pointer;
   animation: movebtn 3s ease-in-out infinite;
