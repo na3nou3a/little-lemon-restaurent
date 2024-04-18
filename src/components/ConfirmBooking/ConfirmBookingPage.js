@@ -1,8 +1,8 @@
 import React from 'react';
 import './confirmBooking.css';
 
-function ConfirmBookingPage({ formState }) {
-  const { date, time, numOfGuests, occasion, instructions, name, email, phone } = formState;
+function ConfirmBookingPage({ bookingState }) {
+  const { date, time, numOfGuests, occasion, instructions, name, email, phone } = bookingState;
   return (
     <section className="confirm-booking">
       <div className="content max-width">

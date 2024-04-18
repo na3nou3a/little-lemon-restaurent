@@ -12,8 +12,8 @@ import {
 import { ErrorMsg } from '../SharedComponents';
 
 function BookingForm({
-  formState,
-  setFormState,
+  bookingState,
+  setBookingState,
   availableTimes,
   dispatch,
   isDisabled,
@@ -23,12 +23,12 @@ function BookingForm({
   submitForm,
   minDate,
 }) {
-  const { date, time, numOfGuests, occasion, instructions, name, email, phone } = formState;
+  const { date, time, numOfGuests, occasion, instructions, name, email, phone } = bookingState;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormState({
-      ...formState,
+    setBookingState({
+      ...bookingState,
       [name]: value,
     });
     if (name === 'instructions' || name === 'occasion') return;
@@ -57,17 +57,17 @@ function BookingForm({
         break;
     }
 
-    if (isFormValid(formState) && isDisabled) {
+    if (isFormValid(bookingState) && isDisabled) {
       setIsDisabled(false);
-    } else if (!isFormValid(formState) && !isDisabled) {
+    } else if (!isFormValid(bookingState) && !isDisabled) {
       setIsDisabled(true);
     }
   };
 
   useEffect(() => {
-    if (isFormValid(formState) && isDisabled) {
+    if (isFormValid(bookingState) && isDisabled) {
       setIsDisabled(false);
-    } else if (!isFormValid(formState) && !isDisabled) {
+    } else if (!isFormValid(bookingState) && !isDisabled) {
       setIsDisabled(true);
     }
   });

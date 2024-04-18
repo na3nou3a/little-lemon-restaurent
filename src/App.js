@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { useState, useReducer } from 'react';
 import {
   Header,
@@ -19,7 +19,6 @@ import {
   NotFoundPage,
 } from './components';
 import { initializeTimes, updateTimes, getStoredClient } from './utils';
-import { submitAPI } from './APIS';
 import './App.css';
 
 function App() {
@@ -37,38 +36,14 @@ function App() {
     phone: '',
   };
 
-  const [formState, setFormState] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({
-    date: '',
-    time: '',
-    numOfGuests: '',
-    name: '',
-    email: '',
-    phone: '',
-  });
-  const [isDisabled, setIsDisabled] = useState(true);
-
-  const navigate = useNavigate();
-
-  const submitForm = (e) => {
-    e.preventDefault();
-    if (submitAPI(formState)) {
-      navigate('/confirm-bookings');
-    }
-  };
+  const [bookingState, setBookingState] = useState(initialValues);
 
   const bookingPageProps = {
     client,
-    formState,
-    setFormState,
+    bookingState,
+    setBookingState,
     availableTimes,
     dispatch,
-    isDisabled,
-    setIsDisabled,
-    formErrors,
-    setFormErrors,
-    navigate,
-    submitForm,
     minDate,
   };
   return (
@@ -85,7 +60,7 @@ function App() {
             <Route element={<AboutPage />} path="/about" />
             <Route element={<BookingPage {...bookingPageProps} />} path="/bookings" />
             <Route
-              element={<ConfirmBookingPage formState={formState} />}
+              element={<ConfirmBookingPage bookingState={bookingState} />}
               path="/confirm-bookings"
             />
             <Route element={<MenuPage />} path="/menu" />

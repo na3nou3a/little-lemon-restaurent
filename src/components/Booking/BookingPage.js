@@ -1,9 +1,63 @@
-import React from 'react';
-import BookingSection from './BookingSection';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import BookingForm from './BookingForm';
+import { NotAllowedPage } from '../../components';
+import { submitAPI } from '../../APIS';
 import './booking.css';
 
 const BookingPage = (props) => {
-  return <BookingSection {...props} />;
+  const { client, bookingState } = props;
+
+  const [formErrors, setFormErrors] = useState({
+    date: '',
+    time: '',
+    numOfGuests: '',
+    name: '',
+    email: '',
+    phone: '',
+  });
+  const [isDisabled, setIsDisabled] = useState(true);
+
+  const navigate = useNavigate();
+
+  const submitForm = (e) => {
+    e.preventDefault();
+    if (submitAPI(bookingState)) {
+      navigate('/confirm-bookings');
+    }
+  };
+  const formProps = {
+    isDisabled,
+    setIsDisabled,
+    formErrors,
+    setFormErrors,
+    navigate,
+    submitForm,
+  };
+
+  if (!client) {
+    return <NotAllowedPage />;
+  }
+  return (
+    <section className="booking-section">
+      <div className="content max-width">
+        <header className="header">
+          <h1 className="title">little lemon reservation</h1>
+        </header>
+        <div className="wrapper">
+          <article className="description">
+            <h2 className="sub-title">Experience the perfect balance of tradition and luxury.</h2>
+            <p className="text">
+              At Little Lemon, we take great pride in providing our customers with the greatest
+              luxurious experience with a touch of tradition.
+            </p>
+            <p className="text">Book a table with us to share in this experience.</p>
+          </article>
+          <BookingForm {...formProps} {...props} />
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default BookingPage;
