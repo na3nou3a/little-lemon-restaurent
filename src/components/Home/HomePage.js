@@ -5,11 +5,11 @@ import CustomersSay from './CustomersSay';
 import { Chicago } from '../SharedComponents';
 import './home.css';
 
-const HomePage = () => {
+const HomePage = (props) => {
   return (
     <>
       <CallToAction />
-      <Specials />
+      <Specials {...props} />
       <CustomersSay />
       <Chicago />
     </>

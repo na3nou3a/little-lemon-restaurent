@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useState, useReducer } from 'react';
 import {
@@ -18,11 +19,18 @@ import {
   ConfirmBookingPage,
   NotFoundPage,
 } from './components';
-import { initializeTimes, updateTimes, getStoredClient } from './utils';
+import {
+  initializeTimes,
+  updateTimes,
+  getStoredClient,
+  getStoredOrders,
+  storeOrders,
+} from './utils';
 import './App.css';
 
 function App() {
   const [client, setClient] = useState(getStoredClient() || false);
+  const [orders, setOrders] = useState(getStoredOrders() || { count: 0, dishes: [] });
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
   const minDate = new Date().toISOString().split('T')[0];
   const initialValues = {
@@ -39,33 +47,41 @@ function App() {
   const [bookingState, setBookingState] = useState(initialValues);
 
   const bookingPageProps = {
-    client,
     bookingState,
     setBookingState,
     availableTimes,
     dispatch,
     minDate,
   };
+  useEffect(() => {
+    storeOrders(orders);
+  }, [orders]);
   return (
     <>
       <ScrollToTop />
       <div className="page-wrapper">
         <div className="top-wrapper max-width">
           <Header />
-          <Nav client={client} />
+          <Nav client={Boolean(client)} counter={orders.count} />
         </div>
         <main>
           <Routes>
-            <Route element={<HomePage />} path="/" />
+            <Route element={<HomePage orders={orders} setOrders={setOrders} />} path="/" />
             <Route element={<AboutPage />} path="/about" />
             <Route element={<BookingPage {...bookingPageProps} />} path="/bookings" />
             <Route
-              element={<ConfirmBookingPage bookingState={bookingState} />}
+              element={<ConfirmBookingPage client={Boolean(client)} bookingState={bookingState} />}
               path="/confirm-bookings"
             />
-            <Route element={<MenuPage />} path="/menu" />
-            <Route element={<OrderOnlinePage />} path="/order" />
-            <Route element={<SignUpPage setClient={setClient} />} path="/signup" />
+            <Route element={<MenuPage orders={orders} setOrders={setOrders} />} path="/menu" />
+            <Route
+              element={<OrderOnlinePage orders={orders} setOrders={setOrders} />}
+              path="/order"
+            />
+            <Route
+              element={<SignUpPage setClient={setClient} orders={orders} setOrders={setOrders} />}
+              path="/signup"
+            />
             <Route element={<LoginPage setClient={setClient} />} path="/login" />
             <Route element={<WelcomePage client={client} />} path="/welcome" />
             <Route element={<ProfilePage client={client} />} path="/profile" />
@@ -73,7 +89,7 @@ function App() {
             <Route element={<NotFoundPage />} path="*" />
           </Routes>
         </main>
-        <Footer client={client} />
+        <Footer client={Boolean(client)} />
       </div>
     </>
   );

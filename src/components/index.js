@@ -3,6 +3,8 @@ export { default as MenuPage } from './Menu/MenuPage';
 export { default as AboutPage } from './About/AboutPage';
 export { default as BookingPage } from './Booking/BookingPage';
 export { default as OrderOnlinePage } from './Orders/OrderOnlinePage';
+export { default as OrderCard } from './Orders/OrderCard';
+export { default as OrdersSummary } from './Orders/OrdersSummary';
 export { default as SignUpPage } from './SignUp/SignUpPage';
 export { default as LoginPage } from './Login/LoginPage';
 export { default as ProfilePage } from './Profile/ProfilePage';

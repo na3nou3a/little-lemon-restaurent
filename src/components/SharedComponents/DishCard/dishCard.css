@@ -64,22 +64,24 @@
   padding: 8px 0;
 }
 
-.dish-card-link {
+.add-btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: fit-content;
   padding: 4px 8px;
   border: 1px solid #495e57;
+  outline: none;
   border-radius: 16px;
   color: #fff;
   background-color: #495e57;
   font-family: 'Karla', sans-serif;
   margin-top: auto;
+  cursor: pointer;
 }
 
-.dish-card-link:hover,
-.dish-card-link:focus {
+.add-btn:hover,
+.add-btn:focus {
   background-color: #fff;
   color: #495e57;
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { specialDishes } from '../../data';
 import { DishCard } from '../SharedComponents';
 
-function Highlights() {
+function specials(props) {
   return (
     <section className="specials">
       <div className="content max-width">
@@ -15,7 +15,7 @@ function Highlights() {
         </header>
         <div className="dish-cards">
           {specialDishes.map((dish) => {
-            return <DishCard key={dish.id} dish={dish} />;
+            return <DishCard key={dish.id} dish={dish} id={dish.id} {...props} />;
           })}
         </div>
       </div>
@@ -23,4 +23,4 @@ function Highlights() {
   );
 }
 
-export default Highlights;
+export default specials;

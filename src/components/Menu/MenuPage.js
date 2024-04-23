@@ -3,7 +3,7 @@ import { DishCard } from '../SharedComponents';
 import { dishes } from '../../data';
 import './menu.css';
 
-const MenuPage = () => {
+const MenuPage = (props) => {
   return (
     <section className="menu-section">
       <div className="content max-width">
@@ -12,7 +12,7 @@ const MenuPage = () => {
         </header>
         <div className="dish-cards">
           {dishes.map((dish) => {
-            return <DishCard key={dish.id} dish={dish} />;
+            return <DishCard key={dish.id} dish={dish} id={dish.id} {...props} />;
           })}
         </div>
       </div>

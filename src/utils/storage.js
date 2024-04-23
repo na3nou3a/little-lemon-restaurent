@@ -10,4 +10,22 @@ const removeStoredClient = () => {
   localStorage.removeItem('client');
 };
 
-export { getStoredClient, storeClient, removeStoredClient };
+const getStoredOrders = () => {
+  return JSON.parse(localStorage.getItem('orders'));
+};
+
+const storeOrders = (orders) => {
+  localStorage.setItem('orders', JSON.stringify(orders));
+};
+
+const removeStoredOrders = () => {
+  localStorage.removeItem('orders');
+};
+export {
+  getStoredClient,
+  storeClient,
+  removeStoredClient,
+  getStoredOrders,
+  storeOrders,
+  removeStoredOrders,
+};

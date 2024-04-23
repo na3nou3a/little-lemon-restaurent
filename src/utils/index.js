@@ -1,4 +1,11 @@
-export { getStoredClient, storeClient, removeStoredClient } from './storage';
+export {
+  getStoredClient,
+  storeClient,
+  removeStoredClient,
+  getStoredOrders,
+  storeOrders,
+  removeStoredOrders,
+} from './storage';
 export { initializeTimes, updateTimes } from './times';
 export {
   isFormValid,

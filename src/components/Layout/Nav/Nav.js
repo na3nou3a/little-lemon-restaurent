@@ -6,7 +6,7 @@ import { pageLinks } from '../../../data';
 import { removeStoredClient } from '../../../utils';
 import './nav.css';
 
-function Nav({ client }) {
+function Nav({ client, counter }) {
   const { pathname } = useLocation();
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   let filteredLinks;
@@ -38,7 +38,7 @@ function Nav({ client }) {
           title="orders"
         >
           <FontAwesomeIcon icon={faCartShopping} className="nav-icon" />
-          <span className="counter">0</span>
+          <span className="counter">{counter}</span>
         </Link>
         <button
           className="open-close-btn"
@@ -102,7 +102,7 @@ function Nav({ client }) {
       >
         <FontAwesomeIcon icon={orderLink.icon} className="nav-icon" />
 
-        <span className="counter">0</span>
+        <span className="counter">{counter}</span>
       </Link>
     </>
   );
