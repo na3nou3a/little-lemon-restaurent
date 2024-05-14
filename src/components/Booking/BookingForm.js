@@ -73,7 +73,7 @@ function BookingForm({
   });
 
   return (
-    <form className="booking-form" onSubmit={submitForm} noValidate>
+    <form className="booking_form" onSubmit={submitForm} noValidate>
       <fieldset>
         <legend>personal info:</legend>
         {/*========== Field ==========*/}
@@ -207,8 +207,7 @@ function BookingForm({
           <textarea
             id="instructions"
             name="instructions"
-            cols={30}
-            rows={10}
+            rows={6}
             placeholder="Some Instructions..."
             value={instructions}
             onChange={handleChange}

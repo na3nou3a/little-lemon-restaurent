@@ -1,0 +1,27 @@
+/* ========== SPECIALS SECTION ==========*/
+.specials {
+  background-color: #fff;
+  .section-content {
+    padding-top: 4rem;
+  }
+  .section-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+/* ========== MEDIA QUERIES ==========*/
+
+@media (min-width: 576px) {
+  .specials {
+    .section-content {
+      padding-top: 6rem;
+    }
+    .section-header {
+      justify-content: space-between;
+    }
+  }
+}

@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BookingForm from './BookingForm';
-import { NotAllowedPage } from '../../components';
 import { submitAPI } from '../../APIS';
-import './booking.css';
 
 const BookingPage = (props) => {
-  const { client, bookingState } = props;
+  const { bookingState } = props;
 
   const [formErrors, setFormErrors] = useState({
     date: '',
@@ -34,25 +32,21 @@ const BookingPage = (props) => {
     navigate,
     submitForm,
   };
-
-  if (!client) {
-    return <NotAllowedPage />;
-  }
   return (
-    <section className="booking-section">
-      <div className="content max-width">
-        <header className="header">
+    <section className="booking">
+      <div className="section-content max-width">
+        <header className="section-header">
           <h1 className="title">little lemon reservation</h1>
         </header>
-        <div className="wrapper">
-          <article className="description">
+        <div className="inner-wrapper booking_inner-wrapper">
+          <div className="booking_description">
             <h2 className="sub-title">Experience the perfect balance of tradition and luxury.</h2>
             <p className="text">
               At Little Lemon, we take great pride in providing our customers with the greatest
               luxurious experience with a touch of tradition.
             </p>
             <p className="text">Book a table with us to share in this experience.</p>
-          </article>
+          </div>
           <BookingForm {...formProps} {...props} />
         </div>
       </div>

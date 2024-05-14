@@ -1,0 +1,45 @@
+/* ========== LOGIN SECTION ========== */
+.login {
+  background-color: $cl-light;
+  .title {
+    text-align: center;
+  }
+  .text-light {
+    padding: 0 1rem 0.5rem;
+    align-self: flex-start;
+  }
+}
+
+.login_inner-wrapper {
+  max-width: 500px;
+  margin: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+/* ========== LOGIN FORM ========== */
+.login-form {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* errors */
+.login-error {
+  padding: 8px;
+  font-weight: 500;
+  font-size: $fs-small;
+  width: 90%;
+  margin: 8px auto;
+  text-transform: capitalize;
+  border: 1px solid $cl-tertiary;
+  background-color: $cl-quaternary;
+  border-radius: 8px;
+  .error {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: red;
+  }
+}

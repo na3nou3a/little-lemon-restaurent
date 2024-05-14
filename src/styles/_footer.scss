@@ -1,0 +1,170 @@
+.footer {
+  background-color: #edefee;
+}
+
+.category-title {
+  letter-spacing: 1px;
+}
+
+.copyright-text {
+  font-size: $fs-small;
+  color: $cl-text-light;
+}
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas:
+    'logo logo logo logo logo'
+    'sitemap sitemap sitemap sitemap sitemap'
+    'contact contact contact contact contact'
+    'social social social social social'
+    'copyright copyright copyright copyright copyright';
+  align-items: start;
+  justify-items: center;
+  row-gap: 2rem;
+}
+
+.item {
+  background-color: #f3f3f3;
+  border-radius: 8px;
+}
+
+.footer_logo-container {
+  grid-area: logo;
+  background-color: transparent;
+  border-radius: 8px;
+}
+.site-map {
+  grid-area: sitemap;
+}
+.contact {
+  grid-area: contact;
+}
+.social-media {
+  grid-area: social;
+}
+.copyright {
+  grid-area: copyright;
+  width: 100%;
+  align-self: end;
+  padding: 1rem;
+}
+
+.footer_logo-container {
+  width: fit-content;
+  min-width: 200px;
+}
+.footer_logo {
+  max-width: 180px;
+  border-radius: 8px;
+}
+.site-map,
+.contact,
+.social-media {
+  width: fit-content;
+  min-width: 300px;
+  padding: 1rem;
+}
+.footer_logo-container,
+.site-map,
+.contact,
+.social-media,
+.copyright {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact li {
+  font-size: 0.9rem;
+}
+
+.contact-icon {
+  margin-right: 0.5rem;
+}
+
+.social-media ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.footer a:link,
+.footer a:visited {
+  display: block;
+}
+
+.footer a:hover,
+.footer a:focus {
+  opacity: 0.5;
+  text-decoration: underline;
+}
+
+.footer a,
+.footer li {
+  font-size: 1rem;
+  color: #495e57;
+}
+.site-map a,
+.contact li {
+  padding: 8px 12px;
+}
+
+.social-media a {
+  padding: 5px;
+}
+
+@media (min-width: 576px) {
+  .footer-content {
+    grid-template-areas:
+      'logo logo sitemap sitemap sitemap'
+      'contact contact contact social social'
+      'copyright copyright copyright copyright copyright';
+  }
+  .footer_logo-container,
+  .contact {
+    justify-self: start;
+  }
+  .social-media,
+  .site-map {
+    justify-self: end;
+  }
+  .site-map {
+    min-width: 250px;
+  }
+  .social-media {
+    align-self: center;
+    min-width: 200px;
+  }
+}
+@media (min-width: 768px) {
+  .footer-content {
+    grid-template-areas:
+      'logo sitemap sitemap contact contact'
+      'social copyright copyright copyright copyright';
+  }
+  .footer_logo-container {
+    min-width: initial;
+    width: 100%;
+  }
+  .footer_logo {
+    max-width: 100%;
+  }
+  .site-map {
+    justify-self: center;
+    min-width: 200px;
+  }
+
+  .social-media {
+    justify-self: start;
+    min-width: initial;
+    width: 100%;
+  }
+
+  .contact {
+    justify-self: end;
+    align-self: center;
+  }
+}

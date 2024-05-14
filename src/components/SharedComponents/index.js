@@ -1,3 +1,3 @@
-export { default as Chicago } from './Chicago/Chicago';
-export { default as DishCard } from './DishCard/DishCard';
-export { ErrorMsg, LoginErrorMsg } from './Errors/ErrorMsgs';
+export { default as Chicago } from './Chicago';
+export { default as DishCard } from './DishCard';
+export { ErrorMsg, LoginErrorMsg } from './ErrorMessages';

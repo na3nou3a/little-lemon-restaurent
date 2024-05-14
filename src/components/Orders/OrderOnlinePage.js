@@ -1,37 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { OrderCard, OrdersSummary } from '../../components';
-import './orders.css';
+import OrderCard from './OrderCard';
+import OrdersSummary from './OrdersSummary';
 
 const OrderOnlinePage = ({ orders, setOrders }) => {
   return (
     <section className="orders">
-      <div className="content max-width">
-        <header className="header">
-          <h2 className="title">orders for delivery!</h2>
+      <div className="section-content max-width">
+        <header className="section-header">
+          <h1 className="title">orders for delivery!</h1>
         </header>
-        {orders.count === 0 ? (
-          <p className="empty-cart-text">Your cart is currently empty.</p>
-        ) : (
-          <div className="content-wrapper">
-            <OrdersSummary orders={orders} />
-            <div className="shopping-cart">
-              <div className="row header-row">
-                <h3 className="col header-col">item</h3>
-                <h3 className="col header-col">u. price</h3>
-                <h3 className="col header-col">qty</h3>
-                <h3 className="col header-col">subtotal</h3>
+        <div className="inner-wrapper">
+          {orders.count === 0 ? (
+            <p className="text">Your cart is currently empty!</p>
+          ) : (
+            <div className="orders-inner-wrapper">
+              <OrdersSummary orders={orders} />
+              <div className="shopping-cart">
+                <div className="shopping-cart_top">
+                  <h3 className="heading">item</h3>
+                  <h3 className="heading">u. price</h3>
+                  <h3 className="heading">qty</h3>
+                  <h3 className="heading">subtotal</h3>
+                </div>
+                <div className="shopping-cart_body">
+                  {orders.dishes.map((dish) => (
+                    <OrderCard key={dish.id} dish={dish} orders={orders} setOrders={setOrders} />
+                  ))}
+                </div>
               </div>
-
-              {orders.dishes.map((dish) => (
-                <OrderCard key={dish.id} dish={dish} orders={orders} setOrders={setOrders} />
-              ))}
             </div>
-          </div>
-        )}
-        <Link className="link-btn shop" to="/menu">
-          continue shopping
-        </Link>
+          )}
+          <Link className="link-btn shop" to="/menu">
+            continue shopping
+          </Link>
+        </div>
       </div>
     </section>
   );

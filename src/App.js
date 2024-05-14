@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import { useState, useReducer } from 'react';
 import {
   Header,
-  Nav,
   Footer,
   ScrollToTop,
   HomePage,
@@ -13,7 +12,7 @@ import {
   OrderOnlinePage,
   SignUpPage,
   LoginPage,
-  LogOutPage,
+  LogoutPage,
   WelcomePage,
   ProfilePage,
   ConfirmBookingPage,
@@ -26,7 +25,6 @@ import {
   getStoredOrders,
   storeOrders,
 } from './utils';
-import './App.css';
 
 function App() {
   const [client, setClient] = useState(getStoredClient() || false);
@@ -60,10 +58,7 @@ function App() {
     <>
       <ScrollToTop />
       <div className="page-wrapper">
-        <div className="top-wrapper max-width">
-          <Header />
-          <Nav client={Boolean(client)} counter={orders.count} />
-        </div>
+        <Header client={Boolean(client)} counter={orders.count} />
         <main>
           <Routes>
             <Route element={<HomePage orders={orders} setOrders={setOrders} />} path="/" />
@@ -85,7 +80,7 @@ function App() {
             <Route element={<LoginPage setClient={setClient} />} path="/login" />
             <Route element={<WelcomePage client={client} />} path="/welcome" />
             <Route element={<ProfilePage client={client} />} path="/profile" />
-            <Route element={<LogOutPage />} path="/logout" />
+            <Route element={<LogoutPage />} path="/logout" />
             <Route element={<NotFoundPage />} path="*" />
           </Routes>
         </main>

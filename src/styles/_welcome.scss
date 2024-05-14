@@ -1,0 +1,12 @@
+.welcome {
+  .title {
+    text-align: center;
+  }
+}
+.welcome_inner-wrapper {
+  p {
+    font-size: $fs-large;
+    text-align: center;
+    text-transform: capitalize;
+  }
+}

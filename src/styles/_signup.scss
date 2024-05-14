@@ -1,0 +1,24 @@
+/* ========== SIGN UP SECTION ========== */
+.signup {
+  .title {
+    text-align: center;
+  }
+}
+
+.signup_inner-wrapper {
+  max-width: 500px;
+  margin: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  .text-light {
+    padding: 0 1rem 0.5rem;
+    align-self: flex-start;
+  }
+}
+
+/* ========== SIGN UP FORM ========== */
+.signup-form {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+}

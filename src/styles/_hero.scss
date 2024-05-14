@@ -1,0 +1,63 @@
+/* ========== CALL TO ACTION SECTION ==========*/
+.hero {
+  background-color: #495e57;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.hero-info {
+  width: 100%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero-title {
+  color: #f4ce14;
+}
+
+.hero-sub-title {
+  color: #edefee;
+}
+
+.hero-text {
+  color: #fff;
+  max-width: 35ch;
+}
+
+/* call to action btn */
+.hero .link-btn {
+  margin: 1rem auto 0;
+  width: fit-content;
+}
+
+.hero-img {
+  width: 100%;
+  min-width: 200px;
+  max-width: 300px;
+  max-height: 400px;
+  margin-bottom: -50px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* ========== MEDIA QUERIES ==========*/
+@media (min-width: 576px) {
+  .hero-content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .hero-img {
+    margin-bottom: -80px;
+  }
+  .hero .link-btn {
+    margin: 2rem 0 0;
+  }
+}

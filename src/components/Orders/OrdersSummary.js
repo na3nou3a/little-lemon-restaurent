@@ -26,7 +26,7 @@ function OrdersSummary({ orders }) {
           discount: <span>-${discount}</span>
         </p>
         <p>
-          shipping(flat rate -fixed): <span>${flatRate}</span>
+          shipping (flat rate -fixed): <span>${flatRate}</span>
         </p>
         <p>
           order total: <strong>${totalPrice}</strong>

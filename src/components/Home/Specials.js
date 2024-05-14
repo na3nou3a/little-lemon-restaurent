@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { specialDishes } from '../../data';
 import { DishCard } from '../SharedComponents';
 
-function specials(props) {
+function Specials(props) {
   return (
     <section className="specials">
-      <div className="content max-width">
-        <header className="header">
-          <h2 className="title">This weeks specials!</h2>
+      <div className="section-content max-width">
+        <header className="section-header">
+          <h1 className="title">This weeks specials!</h1>
           <Link className="link-btn" to="/menu">
             online menu
           </Link>
@@ -23,4 +23,4 @@ function specials(props) {
   );
 }
 
-export default specials;
+export default Specials;

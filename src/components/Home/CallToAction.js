@@ -4,14 +4,14 @@ import foodImg from '../../images/restaurantfood.jpg';
 
 function HeroSection() {
   return (
-    <section className="hero-section">
-      <div className="content max-width">
-        <div className="info">
-          <header className="header">
-            <h1 className="title">little lemon</h1>
-            <h2 className="sub-title">chicago</h2>
+    <section className="hero">
+      <div className="hero-content max-width">
+        <div className="hero-info">
+          <header className="hero-header">
+            <h1 className="hero-title">little lemon</h1>
+            <h2 className="hero-sub-title">chicago</h2>
           </header>
-          <p className="text">
+          <p className="hero-text lead-text">
             We are a family owned Mediterranean restaurant, focused on traditional recipes served
             with a modern twist.
           </p>
@@ -19,7 +19,7 @@ function HeroSection() {
             Reserve a table
           </Link>
         </div>
-        <img className="img" src={foodImg} alt="food" />
+        <img className="hero-img" src={foodImg} alt="food" />
       </div>
     </section>
   );

@@ -20,27 +20,27 @@ function OrderCard({ dish, orders, setOrders }) {
       setOrders({ ...orders });
     }
   };
+  const removeItem = () => {
+    const newDishes = orders.dishes.filter((d) => d !== dish);
+    setOrders({ count: orders.count - 1, dishes: newDishes });
+  };
   return (
-    <div className="row">
-      <div className="col item-details">
-        <h3 className="item-name">{name}</h3>
-        <img src={img} alt={name} className="item-img" />
-        <button className="remove-btn">
-          <FontAwesomeIcon icon={faTrash} title="remove item" className="icon" />
-          delete
-        </button>
-      </div>
-      <div className="col">
-        <span className="item-price">{price}</span>
-      </div>
-      <div className="col qty">
+    <div className="shopping-cart_item">
+      <h3 className="item-name">{name}</h3>
+      <p className="item-price">{price}</p>
+      <div className="item-qty">
         <button onClick={decrement}>-</button>
         <strong>{quantity}</strong>
         <button onClick={increment}>+</button>
       </div>
-      <div className="col">
+      <p className="item-subtotal">
         <strong>${subTotal}</strong>
-      </div>
+      </p>
+      <img src={img} alt={name} className="item-img" />
+      <button className="item-remove" onClick={removeItem}>
+        <FontAwesomeIcon icon={faTrash} title="remove item" className="icon" />
+        delete
+      </button>
     </div>
   );
 }

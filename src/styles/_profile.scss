@@ -1,0 +1,24 @@
+.profile {
+  .title {
+    text-align: center;
+  }
+}
+// .profile_inner-wrapper {
+// }
+.account-info {
+  li {
+    font-size: $fs-medium;
+    text-transform: capitalize;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    text-align: center;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  span {
+    text-transform: initial;
+    color: #495e57;
+    font-weight: 600;
+  }
+}
