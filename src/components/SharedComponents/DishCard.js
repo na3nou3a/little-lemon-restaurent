@@ -23,16 +23,16 @@ const DishCard = ({ dish, orders, setOrders }) => {
 
   return (
     <article className="dish-card">
-      <div className="dish-card_img-container">
-        <img className="dish-card_img" src={img} alt={name} />
+      <div className="dish-card__img-container">
+        <img className="dish-card__img" src={img} alt={name} />
       </div>
-      <div className="dish-card_info">
-        <h3 className="card-title dish-card_title">
-          {name} <span className="dish-card_price">{price}</span>
+      <div className="dish-card__info">
+        <h3 className="card-title dish-card__title">
+          {name} <span className="dish-card__price">{price}</span>
         </h3>
-        <p className="dish-card_description text">{description}</p>
-        <button className="dish-card_btn" onClick={handleClick}>
-          add to cart <FontAwesomeIcon icon={faMotorcycle} className="dish-card_btn-icon" />
+        <p className="dish-card__description text">{description}</p>
+        <button className="dish-card__btn" onClick={handleClick}>
+          add to cart <FontAwesomeIcon icon={faMotorcycle} className="dish-card__btn-icon" />
         </button>
       </div>
     </article>

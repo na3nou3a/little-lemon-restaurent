@@ -37,7 +37,7 @@ function Navbar({ client, isNavExpanded, setIsNavExpanded }) {
         onClick={() => setIsNavExpanded(false)}
         title="close"
       >
-        <FontAwesomeIcon icon={faXmark} size="2x" className="icon" />
+        <FontAwesomeIcon icon={faXmark} className="icon" />
       </button>
 
       {filteredLinks.map((page, index) => {
@@ -51,8 +51,8 @@ function Navbar({ client, isNavExpanded, setIsNavExpanded }) {
               onClick={logout}
               title={name}
             >
-              <FontAwesomeIcon icon={icon} className="nav-link_icon" />
-              <span className="nav-link_name">{name}</span>
+              <FontAwesomeIcon icon={icon} className="nav-link__icon" />
+              <span className="nav-link__name">{name}</span>
             </Link>
           );
         } else {
@@ -63,8 +63,8 @@ function Navbar({ client, isNavExpanded, setIsNavExpanded }) {
               className={pathname === path ? 'nav-link nav-link--current' : 'nav-link'}
               title={name}
             >
-              <FontAwesomeIcon icon={icon} className="nav-link_icon" />
-              <span className="nav-link_name">{name}</span>
+              <FontAwesomeIcon icon={icon} className="nav-link__icon" />
+              <span className="nav-link__name">{name}</span>
             </Link>
           );
         }

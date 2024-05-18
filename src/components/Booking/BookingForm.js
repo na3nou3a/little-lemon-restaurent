@@ -73,7 +73,7 @@ function BookingForm({
   });
 
   return (
-    <form className="booking_form" onSubmit={submitForm} noValidate>
+    <form className="booking-form" onSubmit={submitForm} noValidate>
       <fieldset>
         <legend>personal info:</legend>
         {/*========== Field ==========*/}

@@ -1,6 +1,5 @@
 /* ========== LOGIN SECTION ========== */
 .login {
-  background-color: $cl-light;
   .title {
     text-align: center;
   }
@@ -10,33 +9,33 @@
   }
 }
 
-.login_inner-wrapper {
-  max-width: 500px;
+.login__inner-wrapper {
+  max-width: 31.25rem;
   margin: auto;
   background-color: #fff;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+  border-radius: $b-r-medium;
 }
 
 /* ========== LOGIN FORM ========== */
 .login-form {
   width: 100%;
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: $b-r-medium;
 }
 
 /* errors */
 .login-error {
-  padding: 8px;
-  font-weight: 500;
+  padding: 0.5rem;
+  font-weight: $fw-medium;
   font-size: $fs-small;
   width: 90%;
-  margin: 8px auto;
+  margin: 0.5rem auto;
   text-transform: capitalize;
   border: 1px solid $cl-tertiary;
   background-color: $cl-quaternary;
-  border-radius: 8px;
+  border-radius: $b-r-medium;
   .error {
     font-size: 1rem;
     text-transform: uppercase;

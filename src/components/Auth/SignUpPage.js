@@ -42,19 +42,21 @@ function SignUpPage({ setClient }) {
   };
   return (
     <section className="signup">
-      <div className="section-content max-width">
-        <header className="section-header">
+      <div className="section__container max-width">
+        <header className="section__header">
           <h1 className="title">create new account</h1>
         </header>
-        <div className="inner-wrapper signup_inner-wrapper">
-          <SignUpForm {...signUpProps} />
-          <p className="text-light">
-            already have an account?{' '}
-            <Link to="/login" className="text-link">
-              login
-            </Link>{' '}
-            now!
-          </p>
+        <div className="section__body">
+          <div className="inner-wrapper signup__inner-wrapper">
+            <SignUpForm {...signUpProps} />
+            <p className="text-light">
+              already have an account?{' '}
+              <Link to="/login" className="text-link">
+                login
+              </Link>{' '}
+              now!
+            </p>
+          </div>
         </div>
       </div>
     </section>

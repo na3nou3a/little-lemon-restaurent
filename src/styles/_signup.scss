@@ -5,11 +5,11 @@
   }
 }
 
-.signup_inner-wrapper {
-  max-width: 500px;
+.signup__inner-wrapper {
+  max-width: 31.25rem;
   margin: auto;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: $b-r-medium;
   .text-light {
     padding: 0 1rem 0.5rem;
     align-self: flex-start;
@@ -20,5 +20,5 @@
 .signup-form {
   width: 100%;
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: $b-r-medium;
 }

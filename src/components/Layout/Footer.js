@@ -23,9 +23,9 @@ function Footer({ client }) {
   };
   return (
     <footer className="footer">
-      <div className="footer-content max-width">
-        <div className="footer_logo-container item">
-          <img className="footer_logo" src={logo} alt="site logo" />
+      <div className="footer__container max-width">
+        <div className="footer__logo-container item">
+          <img className="footer__logo" src={logo} alt="site logo" />
         </div>
         <nav className="site-map item">
           <h3 className="category-title">siteMap</h3>
@@ -61,7 +61,7 @@ function Footer({ client }) {
           <ul>
             {contactInfo.map((info, index) => (
               <li key={index}>
-                <FontAwesomeIcon icon={info.icon} className="contact-icon" />
+                <FontAwesomeIcon icon={info.icon} className="contact__icon" />
                 {info.value}
               </li>
             ))}
@@ -80,7 +80,7 @@ function Footer({ client }) {
           </ul>
         </nav>
         <div className="copyright item">
-          <p className="copyright-text">© {year} Little Lemon. All rights reserved.</p>
+          <p className="copyright__text">© {year} Little Lemon. All rights reserved.</p>
         </div>
       </div>
     </footer>

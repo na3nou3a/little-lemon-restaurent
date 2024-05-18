@@ -6,11 +6,11 @@
   letter-spacing: 1px;
 }
 
-.copyright-text {
+.copyright__text {
   font-size: $fs-small;
   color: $cl-text-light;
 }
-.footer-content {
+.footer__container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-areas:
@@ -26,13 +26,13 @@
 
 .item {
   background-color: #f3f3f3;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
-.footer_logo-container {
+.footer__logo-container {
   grid-area: logo;
   background-color: transparent;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 .site-map {
   grid-area: sitemap;
@@ -50,22 +50,22 @@
   padding: 1rem;
 }
 
-.footer_logo-container {
+.footer__logo-container {
   width: fit-content;
-  min-width: 200px;
+  min-width: 12.5rem;
 }
-.footer_logo {
-  max-width: 180px;
-  border-radius: 8px;
+.footer__logo {
+  max-width: 11.25rem;
+  border-radius: $b-r-medium;
 }
 .site-map,
 .contact,
 .social-media {
   width: fit-content;
-  min-width: 300px;
+  min-width: 18.75rem;
   padding: 1rem;
 }
-.footer_logo-container,
+.footer__logo-container,
 .site-map,
 .contact,
 .social-media,
@@ -81,7 +81,7 @@
   font-size: 0.9rem;
 }
 
-.contact-icon {
+.contact__icon {
   margin-right: 0.5rem;
 }
 
@@ -109,21 +109,21 @@
 }
 .site-map a,
 .contact li {
-  padding: 8px 12px;
+  padding: 0.5rem 0.75rem;
 }
 
 .social-media a {
-  padding: 5px;
+  padding: 0.3125rem;
 }
 
-@media (min-width: 576px) {
-  .footer-content {
+@media (min-width: 36rem) {
+  .footer__container {
     grid-template-areas:
       'logo logo sitemap sitemap sitemap'
       'contact contact contact social social'
       'copyright copyright copyright copyright copyright';
   }
-  .footer_logo-container,
+  .footer__logo-container,
   .contact {
     justify-self: start;
   }
@@ -132,29 +132,29 @@
     justify-self: end;
   }
   .site-map {
-    min-width: 250px;
+    min-width: 15.625rem;
   }
   .social-media {
     align-self: center;
-    min-width: 200px;
+    min-width: 12.5rem;
   }
 }
-@media (min-width: 768px) {
-  .footer-content {
+@media (min-width: 48rem) {
+  .footer__container {
     grid-template-areas:
       'logo sitemap sitemap contact contact'
       'social copyright copyright copyright copyright';
   }
-  .footer_logo-container {
+  .footer__logo-container {
     min-width: initial;
     width: 100%;
   }
-  .footer_logo {
+  .footer__logo {
     max-width: 100%;
   }
   .site-map {
     justify-self: center;
-    min-width: 200px;
+    min-width: 12.5rem;
   }
 
   .social-media {

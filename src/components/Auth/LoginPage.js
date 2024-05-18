@@ -49,20 +49,22 @@ function LoginPage({ setClient }) {
 
   return (
     <section className="login">
-      <div className="section-content max-width">
-        <header className="section-header">
+      <div className="section__container max-width">
+        <header className="section__header">
           <h1 className="title">login to your account</h1>
         </header>
-        <div className="login_inner-wrapper inner-wrapper">
-          {errorLogin && <LoginErrorMsg />}
-          <LoginForm {...loginProps} />
-          <p className="text-light">
-            Dont have an account?{' '}
-            <Link to="/signup" className="text-link">
-              sign up
-            </Link>{' '}
-            now!
-          </p>
+        <div className="section__body">
+          <div className="login__inner-wrapper inner-wrapper">
+            {errorLogin && <LoginErrorMsg />}
+            <LoginForm {...loginProps} />
+            <p className="text-light">
+              Dont have an account?{' '}
+              <Link to="/signup" className="text-link">
+                sign up
+              </Link>{' '}
+              now!
+            </p>
+          </div>
         </div>
       </div>
     </section>

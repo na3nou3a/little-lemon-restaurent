@@ -28,14 +28,14 @@ const testimonials = [
       'This restaurant served as a perfect dinner for me after a long night of studying. I would definitely order from here again!',
     img: rosa,
   },
-  // {
-  //   id: 4,
-  //   name: 'raymond',
-  //   rating: [1, 1, 1, 1, 0],
-  //   review:
-  //     'I loved the experience at the restaurant! The food was delicious and the service was exceptional. I will definitely be back more often!',
-  //   img: raymond,
-  // },
+  {
+    id: 4,
+    name: 'raymond',
+    rating: [1, 1, 1, 1, 0],
+    review:
+      'I loved the experience at the restaurant! The food was delicious and the service was exceptional. I will definitely be back more often!',
+    img: raymond,
+  },
   // {
   //   id: 5,
   //   name: 'lisa',

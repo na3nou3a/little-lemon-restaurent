@@ -17,8 +17,8 @@ function OrdersSummary({ orders }) {
 
   return (
     <article className="cart-summary">
-      <h2 className="cart-summary-title">summary</h2>
-      <div className="cart-summary-totals">
+      <h2 className="cart-summary__title">summary</h2>
+      <div className="cart-summary__totals">
         <p>
           subtotal: <span>${subTotal.toFixed(2)}</span>
         </p>

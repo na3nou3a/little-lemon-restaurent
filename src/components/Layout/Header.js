@@ -10,7 +10,7 @@ function Header(props) {
   const { pathname } = useLocation();
   return (
     <header className="header">
-      <div className="header-content max-width">
+      <div className="header__container max-width">
         {/* hamburger btn */}
         <button
           className="hamburger-btn"
@@ -18,11 +18,11 @@ function Header(props) {
           onClick={() => setIsNavExpanded(!isNavExpanded)}
           title={isNavExpanded ? 'close' : 'open'}
         >
-          <FontAwesomeIcon icon={faBars} size="2x" className="icon" />
+          <FontAwesomeIcon icon={faBars} className="icon" />
         </button>
         {/* **** header logo **** */}
         <Link to="/" className="logo-container">
-          <img className="header-logo" src={logo} alt="website logo" />
+          <img className="header__logo" src={logo} alt="website logo" />
         </Link>
         {/* **** navigation **** */}
         <Navbar {...props} isNavExpanded={isNavExpanded} setIsNavExpanded={setIsNavExpanded} />
@@ -32,7 +32,7 @@ function Header(props) {
           className={pathname === '/order' ? 'orders-link orders-link--current' : 'orders-link'}
           title="orders"
         >
-          <FontAwesomeIcon icon={faCartShopping} className="orders-link_icon" />
+          <FontAwesomeIcon icon={faCartShopping} className="orders-link__icon" />
           <span className="counter">{props.counter}</span>
         </Link>
       </div>

@@ -8,11 +8,11 @@ function ProfilePage({ client }) {
   const { name, email, password } = client;
   return (
     <section className="profile">
-      <div className="section-content max-width">
-        <header className="section-header">
+      <div className="section__container max-width">
+        <header className="section__header">
           <h1 className="title">client dashboard</h1>
         </header>
-        <div className="profile_inner-wrapper inner-wrapper">
+        <div className="section__body profile__inner-wrapper inner-wrapper">
           <ul className="account-info">
             <li>
               your name: <span>{name}</span>

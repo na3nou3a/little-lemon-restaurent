@@ -34,12 +34,12 @@ const BookingPage = (props) => {
   };
   return (
     <section className="booking">
-      <div className="section-content max-width">
-        <header className="section-header">
+      <div className="section__container max-width">
+        <header className="section__header">
           <h1 className="title">little lemon reservation</h1>
         </header>
-        <div className="inner-wrapper booking_inner-wrapper">
-          <div className="booking_description">
+        <div className="section__body inner-wrapper booking__inner-wrapper">
+          <div className="booking__description">
             <h2 className="sub-title">Experience the perfect balance of tradition and luxury.</h2>
             <p className="text">
               At Little Lemon, we take great pride in providing our customers with the greatest

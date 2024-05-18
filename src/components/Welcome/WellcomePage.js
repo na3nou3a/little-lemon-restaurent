@@ -6,20 +6,20 @@ function WelcomePage({ client }) {
     if (client) {
       if (client.newClient) {
         return (
-          <header className="section-header">
+          <header className="section__header">
             <h1 className="title">welcome {client.name}!</h1>
           </header>
         );
       } else {
         return (
-          <header className="section-header">
+          <header className="section__header">
             <h1 className="title">welcome back {client.name}!</h1>
           </header>
         );
       }
     } else {
       return (
-        <header className="section-header">
+        <header className="section__header">
           <h1 className="title">welcome to little lemon restaurant!</h1>
         </header>
       );
@@ -29,7 +29,7 @@ function WelcomePage({ client }) {
     if (client) {
       if (client.newClient) {
         return (
-          <div className="inner-wrapper welcome_inner-wrapper">
+          <div className="section__body inner-wrapper welcome__inner-wrapper">
             <p className="text">
               You have successfully created to your{' '}
               <Link to="/profile" className="text-link">
@@ -41,7 +41,7 @@ function WelcomePage({ client }) {
         );
       } else {
         return (
-          <div className="inner-wrapper welcome_inner-wrapper">
+          <div className="section__body inner-wrapper welcome__inner-wrapper">
             <p className="text">
               you have successfully logged in to your{' '}
               <Link to="/profile" className="text-link">
@@ -54,7 +54,7 @@ function WelcomePage({ client }) {
       }
     } else {
       return (
-        <div className="inner-wrapper welcome_inner-wrapper">
+        <div className="section__body inner-wrapper welcome__inner-wrapper">
           <p className="text">
             dont have an account?{' '}
             <Link to="/signup" className="text-link">
@@ -68,7 +68,7 @@ function WelcomePage({ client }) {
   };
   return (
     <section className="welcome">
-      <div className="section-content max-width">
+      <div className="section__container max-width">
         <WelcomeHeader />
         <WelcomeBody />
       </div>

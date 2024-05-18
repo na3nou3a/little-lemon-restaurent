@@ -22,11 +22,11 @@ function testimonialCard({ testimonial }) {
           />
         ))}
       </h3>
-      <div className="testimonial-card_profile">
-        <img src={img} className="testimonial-card_img" alt="client" />
-        <h3 className="testimonial-card_name">{name}</h3>
+      <div className="testimonial-card__profile">
+        <img src={img} className="testimonial-card__img" alt="client" />
+        <h3 className="testimonial-card__name">{name}</h3>
       </div>
-      <p className="testimonial-card_review text-light">
+      <p className="testimonial-card__review text-light">
         <span className="quote">"</span>
         {review}
         <span className="quote">"</span>

@@ -9,12 +9,11 @@
   .title {
     color: #f4ce14;
     text-align: center;
-    letter-spacing: 1px;
   }
   .sub-title {
     margin-bottom: 0.5rem;
   }
-  &_description {
+  &__description {
     color: #fff;
     margin-bottom: 1rem;
   }
@@ -25,12 +24,12 @@
 
 /* ========== BOOKING FORM ========== */
 
-.booking_form {
+.booking-form {
   width: 100%;
-  max-width: 500px;
+  max-width: 31.25rem;
   padding: 1rem;
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   .submit-btn {
     margin-top: 1rem;
   }
@@ -38,22 +37,21 @@
 
 /* ========== MEDIA QUIRIES ========== */
 
-/* @media (min-width: 576px) {
-} */
-
-@media (min-width: 768px) {
-  .booking_inner-wrapper {
+@media (min-width: 48rem) {
+  .booking__inner-wrapper {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 1rem;
   }
 
-  .booking_description {
-    max-width: 500px;
+  .booking__description {
+    // max-width: 31.25rem;
+    flex-basis: 40%;
+    flex-grow: 1;
   }
 
-  .booking_form {
-    max-width: 500px;
-    margin-left: auto;
+  .booking-form {
+    flex-basis: 60%;
   }
 }

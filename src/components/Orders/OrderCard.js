@@ -25,19 +25,19 @@ function OrderCard({ dish, orders, setOrders }) {
     setOrders({ count: orders.count - 1, dishes: newDishes });
   };
   return (
-    <div className="shopping-cart_item">
-      <h3 className="item-name">{name}</h3>
-      <p className="item-price">{price}</p>
-      <div className="item-qty">
+    <div className="shopping-cart__item">
+      <h3 className="item__name">{name}</h3>
+      <p className="item__price">{price}</p>
+      <div className="item__qty">
         <button onClick={decrement}>-</button>
         <strong>{quantity}</strong>
         <button onClick={increment}>+</button>
       </div>
-      <p className="item-subtotal">
+      <p className="item__subtotal">
         <strong>${subTotal}</strong>
       </p>
-      <img src={img} alt={name} className="item-img" />
-      <button className="item-remove" onClick={removeItem}>
+      <img src={img} alt={name} className="item__img" />
+      <button className="item__remove" onClick={removeItem}>
         <FontAwesomeIcon icon={faTrash} title="remove item" className="icon" />
         delete
       </button>
